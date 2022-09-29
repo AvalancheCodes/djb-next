@@ -1,0 +1,32 @@
+@import "../assets/scss/style.scss";
+// import bootstrap icons
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+// import fontawesome icons
+@import "font-awesome/scss/font-awesome.scss";
+
+@import "../components/header.scss";
+@import "../assets/vendor/font-awesome/css/all.min.css";
+@import "../assets/vendor/animate/animate.min.css";
+
+.offcanvas-end.show{
+  animation: 20s fadeOut;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  90% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  80% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
