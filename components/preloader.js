@@ -5,7 +5,6 @@ const Preloader = () => {
     // init preloader
     React.useEffect(() => {
         const preloader = document.querySelector('.preloader');
-        debugger
         if(!!preloader && (preloader) !== 'undefined' && (preloader) !== null) {
             preloader.classList.add('animate__animated', 'animate__fadeOut');
             setTimeout(() => {

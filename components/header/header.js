@@ -2,6 +2,7 @@ import React from 'react';
 import Offcanvas from "./offcanvas";
 import TopNav from "./topnav";
 
+
 const Header = () => {
 
     // Close offcanvas when clicking outside of it or when pressing
@@ -10,8 +11,17 @@ const Header = () => {
         const offcanvasOpener = document.querySelector('[data-bs-toggle="offcanvas"]');
         const offcanvasCloser = document.querySelector('[data-bs-dismiss="offcanvas"]');
         const offcanvas = document.querySelector('#offcanvasEnd');
+        const navLinks = document.querySelectorAll('.nav-link');
+        console.log(navLinks);
 
-        offcanvasOpener.addEventListener('click', () => offcanvas.classList.add('show'));
+        //add event listener to each nav-link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                offcanvas.classList.remove('show');
+            })
+        } );
+
+        offcanvasOpener.addEventListener('mouseover', () => offcanvas.classList.add('show'));
         offcanvasCloser.addEventListener('click', () => offcanvas.classList.remove('show'));
     } , []);
 

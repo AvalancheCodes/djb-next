@@ -1,21 +1,8 @@
 import React from 'react';
-
+import Link from "next/link";
+import {offcanvasRoutes} from "../../config/routes";
 
 const Offcanvas = (props) => {
-
-    // Enable Bootstrap Offcanvas inside useEffect
-    // React.useEffect(() => {
-    //     const offcanvas = document.querySelector('#offcanvasEnd');
-    //     const innerOffcanvasToggle = document.querySelector('[data-bs-dismiss="offcanvas"]');
-    //     innerOffcanvasToggle.addEventListener('click', function () {
-    //         offcanvas.classList.toggle('show');
-    //         // change background visibility of offcanvas and add a fade out animation
-    //
-    //         debugger
-    //         });
-    //
-    // } , []);
-
     return (
         <div className="offcanvas offcanvas-end bg-dark"
              tabIndex="-1"
@@ -29,11 +16,19 @@ const Offcanvas = (props) => {
             </div>
             <div className="offcanvas-body vh-lg-100 d-flex align-items-start flex-column px-5 px-md-6">
                 <ul className="nav dropdown-toggle-start-icon d-block flex-column mb-5">
+                    {offcanvasRoutes.map((route, index) => (
+                        <li className="nav-item" key={index}>
+                            <Link href={route.path}>
+                                <a className="nav-link text-white-stroke display-6 h5">
+                                    {route.friendlyName}</a>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
                 <div className="mt-auto mb-5">
-                    <a href="#" className="font-heading text-white text-primary-hover d-block mb-3">
+                    <a href="components/header/offcanvas#" className="font-heading text-white text-primary-hover d-block mb-3">
                         hello@DavidBarel.com</a>
-                    <a href="#" className="font-heading text-white text-primary-hover">
+                    <a href="components/header/offcanvas#" className="font-heading text-white text-primary-hover">
                         +(800)300-8690</a>
                 </div>
             </div>
