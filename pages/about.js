@@ -37,8 +37,13 @@ const About = () => {
                                         <div className="tns-inner" id="tns2-iw">
                                             <div
                                                 className="tiny-slider-inner  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                                data-gutter="0" data-edge="50" data-autoplay="false" data-arrow="true"
-                                                data-dots="false" data-items="1" id="tns2"
+                                                data-gutter="0"
+                                                data-edge="50"
+                                                data-autoplay="false"
+                                                data-arrow="true"
+                                                data-dots="false"
+                                                data-items="1"
+                                                id="tns2"
                                                 // style="transform: translate3d(-42.8571%, 0px, 0px);"
                                             >
                                                 <div className="item px-3 px-md-6 tns-item tns-slide-cloned"

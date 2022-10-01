@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { testimonialsData } from "../../config/testimonials-data";
+import TestimonialItem from "./testimonial-item";
 // import * as tns from "tiny-slider/src/tiny-slider.module";
 
 
@@ -13,10 +14,10 @@ const Testimonials = () => {
                     const slider = module.tns({
                         container: container,
                         items: 1,
-                        autoplay: container.getAttribute('data-autoplay'),
+                        autoplay: true,
                         autoplayButtonOutput: false,
                         navPosition: 'top',
-                        arrowKeys: container.getAttribute('data-arrow')
+                        controls: false,
                     });
                     console.log('slider: ', slider);
                 }
@@ -35,22 +36,15 @@ const Testimonials = () => {
                     <div className="tiny-slider arrow-md-none arrow-bordered arrow-large arrow-round">
                         <div className="tiny-slider-inner" data-gutter="0"
                              data-edge="50"
-                             data-autoplay="false"
-                             data-arrow="false"
+                             data-autoplay="true"
+                             data-arrow="true"
                              data-dots="false"
                              data-items="1">
                             {testimonialsData.map((testimonial, index) => (
-                                <div className="item px-3 px-md-6" key={index}>
-                                    <div
-                                        className="position-absolute top-50 start-50 translate-middle display-1
-                                    text-body z-index-n9 opacity-1">
-                                        <i className="fas fa-quote-left"></i></div>
-                                    <div className="avatar">
-                                        <img className="avatar-img rounded-circle" src={testimonial.avatar} alt="avatar" /></div>
-                                    <p className="lead">{testimonial.text}</p>
-                                    <h6 className="mb-0 mt-3">{testimonial.name}</h6>
-                                    <span className="small">{testimonial.title}</span>
-                                </div>
+                               <TestimonialItem key={index}
+                                                title={testimonial.title}
+                                                text={testimonial.text}
+                                                name={testimonial.name} />
                             ))}
                         </div>
                     </div>
