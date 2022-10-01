@@ -4,16 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.2.1",
     "bootstrap-icons": "^1.9.1",
     "font-awesome": "^4.7.0",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-calendar": "^3.9.0",
+    "react-dom": "18.2.0",
+    "tiny-slider": "^2.9.4"
   },
   "devDependencies": {
     "eslint": "8.24.0",

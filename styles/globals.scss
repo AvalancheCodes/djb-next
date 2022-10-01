@@ -2,11 +2,12 @@
 // import bootstrap icons
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 // import fontawesome icons
-@import "font-awesome/scss/font-awesome.scss";
+//@import "font-awesome/scss/font-awesome.scss";
 
 @import "../components/header/header";
 @import "../assets/vendor/font-awesome/css/all.min.css";
 @import "../assets/vendor/animate/animate.min.css";
+@import "tiny-slider/dist/tiny-slider.css";
 
 .offcanvas-end.show{
   animation: 20s fadeOut;
