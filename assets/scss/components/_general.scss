@@ -651,7 +651,15 @@
   }
 }
 
-//  Footer fixed 
+//  Footer fixed
+footer.footer-sticky {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1 !important;
+}
+
 @media (min-width:768px) {
   footer.footer-sticky {
     position: fixed !important;

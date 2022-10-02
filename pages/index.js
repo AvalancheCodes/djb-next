@@ -1,6 +1,11 @@
 import Script from "next/script";
 import Illustrated from "../components/hero/illustrated/illustrated";
 import Testimonials from "../components/testimonials/testimonials";
+import PortfolioSummary from "../components/portfolio/portfolio-summary";
+import React from "react";
+import FeaturesBanner from "../components/features/features-banner";
+import LogoBanner from "../components/logos/technology-banner";
+import ProjectCta from "../components/cta/project-cta";
 
 export default function Home() {
 
@@ -16,11 +21,31 @@ export default function Home() {
                 crossOrigin="anonymous"
                 type={"module"}
         ></Script>
+        {/*<Script type={"text/javascript"} src={"vendor/tiny-slider/tiny-slider.js"}></Script>*/}
+        {/*<Script type={"text/javascript"} src={"vendor/js/theme.js"}></Script>*/}
+
         <section className="pt-4">
             <Illustrated />
         </section>
         {/* END HEAD */}
-        <Testimonials />
+        <section className="pt-4">
+            <Testimonials />
+        </section>
+        <section className="bg-dark position-relative pattern-overlay-5 mx-xl-3 mx-xxxl-9 rounded">
+            <FeaturesBanner />
+        </section>
+        <section className="pt-4">
+            <PortfolioSummary />
+        </section>
+
+        {/*    Technology   */}
+        <section className="pt-0">
+            <LogoBanner />
+        </section>
+        <section className="pt-0 position-relative">
+            <ProjectCta />
+        </section>
+
     </>
   )
 }

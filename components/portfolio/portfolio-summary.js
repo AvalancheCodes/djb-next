@@ -1,6 +1,35 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import PortfolioSummaryData from "../../config/portfolio-summary-data";
+import SummaryItem from "./summary-item";
+// import useTinySlider from "../../hooks/useTinySlider/use-Tiny-Slider";
+
+// Slider options
 
 const PortfolioSummary = () => {
+    const containerRef = React.createRef(null);
+    const options = {
+        items: 1,
+        autoplay: true,
+        autoplayButtonOutput: false,
+        controls: false,
+        nav:true
+    }
+    // const tns = useTinySlider(containerRef.current, options, null);
+
+    useEffect(() => {
+        const tns = import("tiny-slider/src/tiny-slider.js")
+            .then(module => {
+                // const container = document.querySelector('.tiny-slider-inner');
+                const slider = module.tns({
+                    container: containerRef.current,
+                    ...options
+                });
+                console.log('slider: ', slider);
+            }
+            );
+        console.log('testimonials loaded and tns: ', tns);
+    } , []);
+
     return (
         <div className="container">
             <div className="row d-flex justify-content-between align-items-center">
@@ -14,38 +43,22 @@ const PortfolioSummary = () => {
             <div className="row">
                 <div className="col-lg-12">
                     <div className="tiny-slider dots-bordered">
-                        <div className="tns-outer" id="tns3-ow">
-                            <div className="tns-liveregion tns-visually-hidden" aria-live="polite"
-                                 aria-atomic="true">slide <span className="current">13</span> of 7
-                            </div>
-                            <div id="tns3-mw" className="tns-ovh">
-                                <div className="tns-inner" id="tns3-iw">
-                                    <div
-                                        className="tiny-slider-inner  tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
-                                        data-arrow="false" data-dots="true" data-items-xl="3" data-items-lg="3"
-                                        data-items-md="3" data-items-sm="2" data-items-xs="1" id="tns3"
-                                        style="transform: translate3d(-80%, 0px, 0px);">
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="tns-nav" aria-label="Carousel Pagination">
-                                <button type="button" data-nav="0" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 1" className="" tabIndex="-1"></button>
-                                <button type="button" data-nav="1" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 2 (Current Slide)"
-                                        className="tns-nav-active"></button>
-                                <button type="button" data-nav="2" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 3" className="" tabIndex="-1"></button>
-                                <button type="button" data-nav="3" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 4" className="" tabIndex="-1"></button>
-                                <button type="button" data-nav="4" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 5" className="" tabIndex="-1"></button>
-                                <button type="button" data-nav="5" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 6" className="" tabIndex="-1"></button>
-                                <button type="button" data-nav="6" aria-controls="tns3" style=""
-                                        aria-label="Carousel Page 7" className="" tabIndex="-1"></button>
-                            </div>
+                        <div ref={containerRef}
+                             className="tiny-slider-inner"
+                             data-arrow="false" data-dots="true" data-items-xl="3"
+                             data-items-lg="3" data-items-md="3" data-items-sm="2" data-items-xs="1">
+                                {/*// style="transform: translate3d(-80%, 0px, 0px);"                                    >*/}
+                                {PortfolioSummaryData.map((summaryItem, index) => {
+                                    return <SummaryItem key={index}
+                                                        id={index}
+                                                        title={summaryItem.title}
+                                                        text={summaryItem.text}
+                                                        name={summaryItem.name}
+                                                        mainImage={summaryItem.mainImage}
+                                                        secondaryImage={summaryItem.secondaryImage}
+                                                        link={summaryItem.link}
+                                    />
+                                }  )}
                         </div>
                     </div>
                 </div>

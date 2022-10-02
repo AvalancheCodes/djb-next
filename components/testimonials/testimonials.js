@@ -17,7 +17,8 @@ const Testimonials = () => {
                         autoplay: true,
                         autoplayButtonOutput: false,
                         navPosition: 'top',
-                        controls: false,
+                        controls: true,
+                        nav:false
                     });
                     console.log('slider: ', slider);
                 }
@@ -42,6 +43,7 @@ const Testimonials = () => {
                              data-items="1">
                             {testimonialsData.map((testimonial, index) => (
                                <TestimonialItem key={index}
+                                                id={index}
                                                 title={testimonial.title}
                                                 text={testimonial.text}
                                                 name={testimonial.name} />

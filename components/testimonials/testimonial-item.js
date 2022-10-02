@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from "next/image";
 
-const TestimonialItem = ({title, key, avatar, text, name}) => {
+const TestimonialItem = ({title, avatar, text, name}) => {
     return (
-        <div className="item px-3 px-md-6" key={key}>
+        <div className="item px-3 px-md-6" >
             <div
                 className="position-absolute top-50 start-50 translate-middle display-1
                                     text-body z-index-n9 opacity-1">

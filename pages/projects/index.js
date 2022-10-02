@@ -1,9 +1,10 @@
 import React from 'react';
+import PortfolioSummary from "../../components/portfolio/portfolio-summary";
 
 const Projects = () => {
     return (
         <div>
-            <h1>Projects</h1>
+            <PortfolioSummary />
         </div>
     );
 };
