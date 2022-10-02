@@ -28,18 +28,22 @@ export default function Home() {
             <Illustrated />
         </section>
         {/* END HEAD */}
-        <section className="pt-4">
-            <Testimonials />
-        </section>
+
+        {/*  Services  */}
         <section className="bg-dark position-relative pattern-overlay-5 mx-xl-3 mx-xxxl-9 rounded">
             <FeaturesBanner />
         </section>
+
+        <section className="pt-4">
+            <Testimonials />
+        </section>
+
         <section className="pt-4">
             <PortfolioSummary />
         </section>
 
         {/*    Technology   */}
-        <section className="pt-0">
+        <section className="pt-0 mt-7">
             <LogoBanner />
         </section>
         <section className="pt-0 position-relative">

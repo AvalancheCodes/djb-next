@@ -14662,6 +14662,9 @@ textarea.form-control-lg {
     height: 100vh !important;
   }
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .accordion .accordion-button {
   text-align: left;
 }

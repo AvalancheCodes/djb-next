@@ -8,8 +8,10 @@ const FeaturesBanner = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-5 mb-5">
-                        <h2 className="display-5 text-white-stroke">Our every day business</h2>
-                        <p>Building a strong brand. Distinctive, recognizable and consistent. Effective communication
+                        <h2 className="display-5 text-white-stroke">Services
+                        </h2>
+                        <p >Building a strong brand. Distinctive, recognizable and consistent.
+                            Effective communication
                             campaigns that activate your target group.</p>
                     </div>
                     <div className="col-md-7 mb-5">

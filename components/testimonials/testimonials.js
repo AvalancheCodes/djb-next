@@ -3,6 +3,36 @@ import { testimonialsData } from "../../config/testimonials-data";
 import TestimonialItem from "./testimonial-item";
 // import * as tns from "tiny-slider/src/tiny-slider.module";
 
+const options = {
+    items: 1,
+    autoplay: true,
+    autoplayButtonOutput: false,
+    navPosition: 'top',
+    controls: true,
+    nav:false,
+    controlsText: [
+        '<i class="fas fa-chevron-left"></i>',
+        '<i class="fas fa-chevron-right"></i>'
+    ],
+    // todo: add responsive options
+    // responsive: {
+    //     0: {
+    //         items: Number(sliderItemsXs)
+    //     },
+    //     576: {
+    //         items: Number(sliderItemsSm)
+    //     },
+    //     768: {
+    //         items: Number(sliderItemsMd)
+    //     },
+    //     992: {
+    //         items: Number(sliderItemsLg)
+    //     },
+    //     1200: {
+    //         items: Number(sliderItemsXl)
+    //     }
+    // }
+}
 
 const Testimonials = () => {
 
@@ -13,18 +43,12 @@ const Testimonials = () => {
                     const container = document.querySelector('.tiny-slider-inner');
                     const slider = module.tns({
                         container: container,
-                        items: 1,
-                        autoplay: true,
-                        autoplayButtonOutput: false,
-                        navPosition: 'top',
-                        controls: true,
-                        nav:false
+                        ...options
                     });
                     console.log('slider: ', slider);
                 }
             );
             console.log('testimonials loaded and tns: ', tns);
-
         },
         []);
     return (

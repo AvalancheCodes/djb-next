@@ -15,6 +15,11 @@
 @import "custom/utilities";
 @import "../vendor/bootstrap/scss/utilities/api";
 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // Extended bootstrap components
 @import "custom/accordion";
 @import "custom/breadcrumb";
