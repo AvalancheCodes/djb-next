@@ -1,0 +1,62 @@
+---
+title: 'frontend development'
+date: '2022-9-16'
+thumbnailUrl: 'frontend-development.jpg'
+iconClass: 'fab fa-react'
+excerpt: 'NextJS is a framework for ReactJS. It makes building React apps easier - especially React apps that should have server-side rendering (though it does way more than just take care of that).'
+tags: ['nextjs', 'react', 'javascript', 'typescript']
+subServices:
+  - title: 'NextJS Development'
+    excerpt: 'NextJS is a framework for ReactJS. It makes building React apps easier - especially React apps that should have server-side rendering (though it does way more than just take care of that).'
+    iconClass: 'fab fa-react'
+    tags: ['nextjs', 'react', 'javascript', 'typescript']
+    thumbnailUrl: 'nextjs-development.jpg'
+    url: '/services/next-js-development'
+  - title: 'React Development'
+    excerpt: 'React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.'
+    iconClass: 'fab fa-react'
+    tags: ['react', 'javascript', 'typescript']
+    thumbnailUrl: 'react-development.jpg'
+    url: '/services/react-development'
+  - title: 'TypeScript Development'
+    excerpt: 'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It is a language for application-scale JavaScript.'
+    iconClass: 'fab fa-react'
+    tags: ['typescript', 'javascript']
+    thumbnailUrl: 'typescript-development.jpg'
+    url: '/services/typescript-development'
+  - title: 'JavaScript Development'
+    excerpt: 'JavaScript is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm.'
+    iconClass: 'fab fa-react'
+    tags: ['javascript']
+    thumbnailUrl: 'javascript-development.jpg'
+    url: '/services/javascript-development'
+    
+---
+
+# Website design and development
+
+NextJS is a **framework for ReactJS**.
+
+Wait a second ... a "framework" for React? Isn't React itself already a framework for JavaScript?
+
+Well ... first of all, React is a "library" for JavaScript. That seems to be important for some people.
+
+Not for me, but still, there is a valid point: React already is a framework / library for JavaScript. So it's already an extra layer on top of JS.
+
+## Why would we then need NextJS?
+
+Because NextJS makes building React apps easier - especially React apps that should have server-side rendering (though it does way more than just take care of that).
+
+In this article, we'll dive into the core concepts and features NextJS has to offer:
+
+- File-based Routing
+- Built-in Page Pre-rendering
+- Rich Data Fetching Capabilities
+- Image Optimization
+- Much More
+
+## File-based Routing
+
+![Create routes via your file + folder structure](nextjs-file-based-routing.png)
+
+... More content ...
