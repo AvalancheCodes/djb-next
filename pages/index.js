@@ -37,15 +37,15 @@ export default function Home() {
         <section className="pt-4">
             <Testimonials />
         </section>
-
-        <section className="pt-4">
-            <PortfolioSummary />
-        </section>
-
         {/*    Technology   */}
         <section className="pt-0 mt-7">
             <LogoBanner />
         </section>
+        <section className="pt-4">
+            <PortfolioSummary />
+        </section>
+
+
         <section className="pt-0 position-relative">
             <ProjectCta />
         </section>

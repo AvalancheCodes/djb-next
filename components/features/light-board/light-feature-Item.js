@@ -2,25 +2,38 @@ import React from 'react';
 import Link from "next/link";
 
 const LightFeatureItem = (props) => {
-    const { title, description, iconClass, subServices} = props;
+    const { title, slug, excerpt, iconClass, subServices} = props;
+
+    if (!subServices) {
+        console.log(props);
+        return;
+    }
+
+    const items = subServices.map((subService, index) => {
+        return (
+            <Link href={`/services/${subService.slug}`} key={index}>
+                <a className="list-group-item bg-transparent">
+                    {subService.title}
+                    {/*<div className="card-body p-0">*/}
+                    {/*    <h5 className="card-title">{subService.title}</h5>*/}
+                    {/*    <p className="card-text">{subService.excerpt}</p>*/}
+                    {/*</div>*/}
+                </a>
+            </Link>
+        )
+    } );
     return (
         <div className="col-md-6 col-lg-4">
             <div className="mb-6">
                 <span className="text-primary display-6">
                     <i className={iconClass}></i></span>
-                <h4 className="mt-4 mb-4"><a href="#">{title}</a></h4>
-                <p>{description}</p>
-                <div className="list-group list-group-borderless list-unstyled">
-                    {subServices.map((subService, index) => {
-                        return (
-                            <Link href={subService.url} key={index}>
-                                <a className="list-group-item list-group-item-action">{subService.title}</a>
-                            </Link>
-                        )
-                    })}
-                    {/*<a href="#" className="list-group-item bg-transparent">Art Direction</a>*/}
-                    {/*<a href="#" className="list-group-item bg-transparent">Visual Design</a>*/}
-                </div>
+                <h4 className="mt-4 mb-4">
+                    <Link href={`/services/${slug}`}>
+                        <a className="text-dark">{title}</a>
+                    </Link>
+                </h4>
+                     <p>{excerpt}</p>
+                <div className="list-group list-group-borderless list-unstyled"> {items}</div>
             </div>
         </div>
     );

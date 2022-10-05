@@ -9,6 +9,36 @@
 @import "../assets/vendor/animate/animate.min.css";
 @import "tiny-slider/dist/tiny-slider.css";
 
+// Create set of relative positioning utilities
+$left: 'left';
+$right: 'right';
+$top: 'top';
+$bottom: 'bottom';
+$positions: ($left, $right, $top, $bottom);
+
+@mixin position-object($type:"relative", $shift_direction: $left, $shift_value: 0 ){
+  .relative-#{ $shift_direction }-#{ $shift_value } {
+    position: #{ $type };
+    #{ $shift_direction }: #{ $shift_value };
+  }
+}
+
+// Generate 25 relative positioning utilities
+@each $position in $positions {
+  @for $i from 1 through 25 {
+    @include position-object("relative", $position, $i * 5px);
+  }
+}
+
+@include position-object("relative", "left", 25px);
+
+
+.overall{
+  position: relative;
+  left: -25px;
+}
+
+
 .offcanvas-end.show{
   animation: 20s fadeOut;
   animation-fill-mode: forwards;
@@ -31,3 +61,4 @@
     visibility: visible;
   }
 }
+

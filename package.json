@@ -8,7 +8,7 @@
     "os": false
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build && next export",
     "start": "next build && next start",
     "lint": "next lint"

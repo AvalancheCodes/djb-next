@@ -6,7 +6,7 @@ const LogoBanner = () => {
         <div className="container">
                 <div className="row">
                     <div className="col-lg-4">
-                        <h2 className="display-5 mb-3">Worked with...</h2>
+                        <h2 className="display-5 mb-3">Technology I use.. </h2>
                         <p>Rooms oh fully taken by worse do. Points afraid but may
                             end law lasted.
                             Was out laughter raptures

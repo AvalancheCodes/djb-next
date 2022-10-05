@@ -18449,7 +18449,6 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
   stroke-miterlimit: 10;
 }
 
-/*User CSS*/
 .offcanvas {
   visibility: visible !important;
 }
@@ -18459,6 +18458,516 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
   background-position: center left;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.relative-left-5px {
+  position: relative;
+  left: 5px;
+}
+
+.relative-left-10px {
+  position: relative;
+  left: 10px;
+}
+
+.relative-left-15px {
+  position: relative;
+  left: 15px;
+}
+
+.relative-left-20px {
+  position: relative;
+  left: 20px;
+}
+
+.relative-left-25px {
+  position: relative;
+  left: 25px;
+}
+
+.relative-left-30px {
+  position: relative;
+  left: 30px;
+}
+
+.relative-left-35px {
+  position: relative;
+  left: 35px;
+}
+
+.relative-left-40px {
+  position: relative;
+  left: 40px;
+}
+
+.relative-left-45px {
+  position: relative;
+  left: 45px;
+}
+
+.relative-left-50px {
+  position: relative;
+  left: 50px;
+}
+
+.relative-left-55px {
+  position: relative;
+  left: 55px;
+}
+
+.relative-left-60px {
+  position: relative;
+  left: 60px;
+}
+
+.relative-left-65px {
+  position: relative;
+  left: 65px;
+}
+
+.relative-left-70px {
+  position: relative;
+  left: 70px;
+}
+
+.relative-left-75px {
+  position: relative;
+  left: 75px;
+}
+
+.relative-left-80px {
+  position: relative;
+  left: 80px;
+}
+
+.relative-left-85px {
+  position: relative;
+  left: 85px;
+}
+
+.relative-left-90px {
+  position: relative;
+  left: 90px;
+}
+
+.relative-left-95px {
+  position: relative;
+  left: 95px;
+}
+
+.relative-left-100px {
+  position: relative;
+  left: 100px;
+}
+
+.relative-left-105px {
+  position: relative;
+  left: 105px;
+}
+
+.relative-left-110px {
+  position: relative;
+  left: 110px;
+}
+
+.relative-left-115px {
+  position: relative;
+  left: 115px;
+}
+
+.relative-left-120px {
+  position: relative;
+  left: 120px;
+}
+
+.relative-left-125px {
+  position: relative;
+  left: 125px;
+}
+
+.relative-right-5px {
+  position: relative;
+  right: 5px;
+}
+
+.relative-right-10px {
+  position: relative;
+  right: 10px;
+}
+
+.relative-right-15px {
+  position: relative;
+  right: 15px;
+}
+
+.relative-right-20px {
+  position: relative;
+  right: 20px;
+}
+
+.relative-right-25px {
+  position: relative;
+  right: 25px;
+}
+
+.relative-right-30px {
+  position: relative;
+  right: 30px;
+}
+
+.relative-right-35px {
+  position: relative;
+  right: 35px;
+}
+
+.relative-right-40px {
+  position: relative;
+  right: 40px;
+}
+
+.relative-right-45px {
+  position: relative;
+  right: 45px;
+}
+
+.relative-right-50px {
+  position: relative;
+  right: 50px;
+}
+
+.relative-right-55px {
+  position: relative;
+  right: 55px;
+}
+
+.relative-right-60px {
+  position: relative;
+  right: 60px;
+}
+
+.relative-right-65px {
+  position: relative;
+  right: 65px;
+}
+
+.relative-right-70px {
+  position: relative;
+  right: 70px;
+}
+
+.relative-right-75px {
+  position: relative;
+  right: 75px;
+}
+
+.relative-right-80px {
+  position: relative;
+  right: 80px;
+}
+
+.relative-right-85px {
+  position: relative;
+  right: 85px;
+}
+
+.relative-right-90px {
+  position: relative;
+  right: 90px;
+}
+
+.relative-right-95px {
+  position: relative;
+  right: 95px;
+}
+
+.relative-right-100px {
+  position: relative;
+  right: 100px;
+}
+
+.relative-right-105px {
+  position: relative;
+  right: 105px;
+}
+
+.relative-right-110px {
+  position: relative;
+  right: 110px;
+}
+
+.relative-right-115px {
+  position: relative;
+  right: 115px;
+}
+
+.relative-right-120px {
+  position: relative;
+  right: 120px;
+}
+
+.relative-right-125px {
+  position: relative;
+  right: 125px;
+}
+
+.relative-top-5px {
+  position: relative;
+  top: 5px;
+}
+
+.relative-top-10px {
+  position: relative;
+  top: 10px;
+}
+
+.relative-top-15px {
+  position: relative;
+  top: 15px;
+}
+
+.relative-top-20px {
+  position: relative;
+  top: 20px;
+}
+
+.relative-top-25px {
+  position: relative;
+  top: 25px;
+}
+
+.relative-top-30px {
+  position: relative;
+  top: 30px;
+}
+
+.relative-top-35px {
+  position: relative;
+  top: 35px;
+}
+
+.relative-top-40px {
+  position: relative;
+  top: 40px;
+}
+
+.relative-top-45px {
+  position: relative;
+  top: 45px;
+}
+
+.relative-top-50px {
+  position: relative;
+  top: 50px;
+}
+
+.relative-top-55px {
+  position: relative;
+  top: 55px;
+}
+
+.relative-top-60px {
+  position: relative;
+  top: 60px;
+}
+
+.relative-top-65px {
+  position: relative;
+  top: 65px;
+}
+
+.relative-top-70px {
+  position: relative;
+  top: 70px;
+}
+
+.relative-top-75px {
+  position: relative;
+  top: 75px;
+}
+
+.relative-top-80px {
+  position: relative;
+  top: 80px;
+}
+
+.relative-top-85px {
+  position: relative;
+  top: 85px;
+}
+
+.relative-top-90px {
+  position: relative;
+  top: 90px;
+}
+
+.relative-top-95px {
+  position: relative;
+  top: 95px;
+}
+
+.relative-top-100px {
+  position: relative;
+  top: 100px;
+}
+
+.relative-top-105px {
+  position: relative;
+  top: 105px;
+}
+
+.relative-top-110px {
+  position: relative;
+  top: 110px;
+}
+
+.relative-top-115px {
+  position: relative;
+  top: 115px;
+}
+
+.relative-top-120px {
+  position: relative;
+  top: 120px;
+}
+
+.relative-top-125px {
+  position: relative;
+  top: 125px;
+}
+
+.relative-bottom-5px {
+  position: relative;
+  bottom: 5px;
+}
+
+.relative-bottom-10px {
+  position: relative;
+  bottom: 10px;
+}
+
+.relative-bottom-15px {
+  position: relative;
+  bottom: 15px;
+}
+
+.relative-bottom-20px {
+  position: relative;
+  bottom: 20px;
+}
+
+.relative-bottom-25px {
+  position: relative;
+  bottom: 25px;
+}
+
+.relative-bottom-30px {
+  position: relative;
+  bottom: 30px;
+}
+
+.relative-bottom-35px {
+  position: relative;
+  bottom: 35px;
+}
+
+.relative-bottom-40px {
+  position: relative;
+  bottom: 40px;
+}
+
+.relative-bottom-45px {
+  position: relative;
+  bottom: 45px;
+}
+
+.relative-bottom-50px {
+  position: relative;
+  bottom: 50px;
+}
+
+.relative-bottom-55px {
+  position: relative;
+  bottom: 55px;
+}
+
+.relative-bottom-60px {
+  position: relative;
+  bottom: 60px;
+}
+
+.relative-bottom-65px {
+  position: relative;
+  bottom: 65px;
+}
+
+.relative-bottom-70px {
+  position: relative;
+  bottom: 70px;
+}
+
+.relative-bottom-75px {
+  position: relative;
+  bottom: 75px;
+}
+
+.relative-bottom-80px {
+  position: relative;
+  bottom: 80px;
+}
+
+.relative-bottom-85px {
+  position: relative;
+  bottom: 85px;
+}
+
+.relative-bottom-90px {
+  position: relative;
+  bottom: 90px;
+}
+
+.relative-bottom-95px {
+  position: relative;
+  bottom: 95px;
+}
+
+.relative-bottom-100px {
+  position: relative;
+  bottom: 100px;
+}
+
+.relative-bottom-105px {
+  position: relative;
+  bottom: 105px;
+}
+
+.relative-bottom-110px {
+  position: relative;
+  bottom: 110px;
+}
+
+.relative-bottom-115px {
+  position: relative;
+  bottom: 115px;
+}
+
+.relative-bottom-120px {
+  position: relative;
+  bottom: 120px;
+}
+
+.relative-bottom-125px {
+  position: relative;
+  bottom: 125px;
+}
+
+.relative-left-25px {
+  position: relative;
+  left: 25px;
+}
+
+.overall {
+  position: relative;
+  left: -25px;
 }
 
 .offcanvas-end.show {
