@@ -47,7 +47,7 @@ export default function Home() {
 
 
         <section className="pt-0 position-relative">
-            <ProjectCta />
+            {/*<ProjectCta />*/}
         </section>
 
     </>
