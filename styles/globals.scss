@@ -19,18 +19,22 @@ $positions: ($left, $right, $top, $bottom);
 @mixin position-object($type:"relative", $shift_direction: $left, $shift_value: 0 ){
   .relative-#{ $shift_direction }-#{ $shift_value } {
     position: #{ $type };
-    #{ $shift_direction }: #{ $shift_value };
+    // If shiftDirection is left or right, set left or right
+    @if $shift_direction == $left or $shift_direction == $top {
+      #{ $shift_direction }: #{ "-" + $shift_value }px;
+    } @else{
+      #{ $shift_direction }: #{ $shift_value }px;
+    }
   }
 }
 
 // Generate 25 relative positioning utilities
 @each $position in $positions {
   @for $i from 1 through 25 {
-    @include position-object("relative", $position, $i * 5px);
+    //
+    @include position-object("relative", $position, $i);
   }
 }
-
-@include position-object("relative", "left", 25px);
 
 
 .overall{

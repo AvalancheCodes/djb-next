@@ -18,10 +18,8 @@ const ServicesHero = () => {
                     </div>
                     <div className="col-2 mt-auto mb-8 d-none d-md-block">
                         <DottedRectangle classList={"d-none d-lg-block mb-7"} />
-                        {/*<img className="rounded overall "*/}
-                        {/*     src="https://via.placeholder.com/770x770/999999"  alt="placeholder" />*/}
-                        <div className={"relative-left-25 overall"}>
-                            <Image className="rounded ms-n4 " loader={() => srcSecondary}
+                        <div className={"relative-left-25 relative-top-25"}>
+                            <Image className="rounded ms-n4" loader={() => srcSecondary}
                                    src={srcSecondary} width={770} height={770} alt="secondary placeholder" />
                         </div>
 

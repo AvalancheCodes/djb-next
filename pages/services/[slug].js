@@ -3,9 +3,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import {serialize} from "next-mdx-remote/serialize";
+import ServiceLayout from "../layouts/service-layout";
 import BreadCrumbs from "../../components/breadcrumb/bread-crumbs";
 import {MDXRemote} from "next-mdx-remote";
 import Image from "next/image";
+import Head from "next/head";
+import Calendly from "../../components/calendly/calendly";
 
 
 export const getStaticPaths = async () => {
@@ -42,20 +45,23 @@ export const getStaticProps = async (context) => {
 const ServiceDetails = (props) => {
     const { frontMatter, mdxSource, slug } = props;
     return (
-        <>
-        <section>
-            <div className="container">
-                <div className="row ">
-                    <div className="col-md-8">
-                        <BreadCrumbs />
-                        <h2 className="display-6">{frontMatter.title}</h2>
-                        <p className="lead">{frontMatter.excerpt}</p>
+        <ServiceLayout>
+            <Head>
+                <title>{frontMatter.title}</title>
+            </Head>
+            <section>
+                <div className="container">
+                    <div className="row ">
+                        <div className="col-md-8">
+                            <BreadCrumbs />
+                            <h2 className="display-6">{frontMatter.title}</h2>
+                            <p className="lead">{frontMatter.excerpt}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
             <MDXRemote {...mdxSource} components={{Image}} />
-        </>
+        </ServiceLayout>
     );
 };
 

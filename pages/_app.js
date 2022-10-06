@@ -4,10 +4,11 @@ import Preloader from "../components/preloader";
 import React from "react";
 
 function MyApp({ Component, pageProps }) {
-  return <PublicLayout>
-    <Preloader />
-    <Component {...pageProps} />
-  </PublicLayout>
+  return (
+    <PublicLayout>
+      <Preloader />
+      <Component {...pageProps} />
+  </PublicLayout>)
 }
 
 export default MyApp
