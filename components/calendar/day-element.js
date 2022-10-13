@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Day = ({day, classList}) => {
+const DayElement = ({day, classList}) => {
     return (
         <>
             <button className={classList}>
@@ -10,4 +10,4 @@ const Day = ({day, classList}) => {
     );
 };
 
-export default Day;
+export default DayElement;

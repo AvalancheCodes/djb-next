@@ -6,7 +6,7 @@ export const offcanvasRoutes = [
     },
     {
         name:'About me',
-        friendlyName: 'About me',
+        friendlyName: 'Approach me',
         path: '/about'
     },
     {
