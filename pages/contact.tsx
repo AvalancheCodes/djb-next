@@ -18,8 +18,8 @@ const Contact = () => {
   // const appConfig = appContext.configData;
   // const geo = appConfig.locations[0].geoLocation;
   const geo: IGeoLocation = {
-    lat: "34.067407",
-    lng: "-118.388431",
+    lat: 34.067407,
+    lng: -118.388431,
   };
 
   return (

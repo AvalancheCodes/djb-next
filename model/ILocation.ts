@@ -6,8 +6,8 @@ export interface IAddress {
   zip: string;
 }
 export interface IGeoLocation {
-  lat: string;
-  lng: string;
+  lat: number;
+  lng: number;
 }
 
 export interface ILocation {
