@@ -1,0 +1,24 @@
+{
+  "name": "djb-next",
+  "version": "1.0.0",
+  "domain": "davidbarel.com",
+  "description": "My personal website",
+  "author": "David Barel",
+  "categories": ["nextjs", "react", "typescript"],
+  "locations": [
+    {
+      "name": "Beverly Hills Offices",
+      "address": {
+        "street": "9025 Beverly Hills Blvd",
+        "suite": "212",
+        "city": "Beverly Hills",
+        "state": "CA",
+        "zip": "90210"
+      },
+      "geoLocation": {
+        "lat": 34.067407,
+        "lng": -118.388431
+      }
+    }
+  ]
+}
