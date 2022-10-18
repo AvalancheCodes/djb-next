@@ -5,8 +5,9 @@ import ContactChannelInfo from "./ContactChannelInfo";
 const channels = contactChannelsData;
 
 const ContactChannels = () => {
-  const items = channels.map((channel) => (
+  const items = channels.map((channel, index) => (
     <ContactChannelInfo
+      key={index}
       action={channel.action}
       description={channel.description}
       actionValue={channel.actionValue}
