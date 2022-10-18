@@ -1,6 +1,6 @@
 import { contact } from "../../model/Contact";
 
-const contactChannelsData: contact.IContactChannel[] = [
+export const contactChannelsData: contact.IContactChannel[] = [
   {
     icon: "bi bi-headset",
     action: contact.EAction.Call,
@@ -23,5 +23,3 @@ const contactChannelsData: contact.IContactChannel[] = [
     url: "https://wa.me/15555555555",
   },
 ];
-
-export default contactChannelsData;

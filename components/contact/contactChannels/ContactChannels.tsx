@@ -1,5 +1,5 @@
 import React from "react";
-import contactChannelsData from "../../../pages/contact/contactChannelsData";
+import { contactChannelsData } from "../../../pages/contact/contactChannelsData";
 import ContactChannelInfo from "./ContactChannelInfo";
 
 const channels = contactChannelsData;
