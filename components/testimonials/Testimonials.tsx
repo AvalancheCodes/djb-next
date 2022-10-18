@@ -61,11 +61,9 @@ const Testimonials = () => {
           <h2 className="display-5 mb-5 text-dark-stroke">Testimonials</h2>
         </div>
         <div className="col-md-10 mx-auto text-center pb-7">
-          <TinySliderComponent
-            children={items}
-            options={options}
-            classNames={""}
-          />
+          <TinySliderComponent options={options} classNames={""}>
+            {items}
+          </TinySliderComponent>
         </div>
       </div>
     </div>

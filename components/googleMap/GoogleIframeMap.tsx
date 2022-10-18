@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
-const GoogleIframeMap = ({ geo, zoom, size }) => {
+const GMapLocation = ({ geo, zoom, size }) => {
   const [map, setMap] = React.useState(null);
-  const { lat, lng } = geo;
   const containerStyle = {
     width: `${size.width}px`,
     height: `${size.height}px`,
@@ -26,12 +25,17 @@ const GoogleIframeMap = ({ geo, zoom, size }) => {
     setMap(null);
   }, []);
 
+  useEffect(() => {
+    if (map) {
+      map.setZoom(zoom);
+    }
+  }, [zoom]);
+
   return isLoaded ? (
     <GoogleMap
       mapContainerClassName="w-100 h-100 grayscal"
       mapContainerStyle={containerStyle}
       center={geo}
-      zoom={15}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
@@ -44,4 +48,4 @@ const GoogleIframeMap = ({ geo, zoom, size }) => {
   );
 };
 
-export default React.memo(GoogleIframeMap);
+export default React.memo(GMapLocation);
