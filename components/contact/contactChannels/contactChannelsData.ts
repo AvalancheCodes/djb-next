@@ -1,4 +1,4 @@
-import { contact } from "../../model/Contact";
+import { contact } from "../../../model/Contact";
 
 export const contactChannelsData: contact.IContactChannel[] = [
   {
