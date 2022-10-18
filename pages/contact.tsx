@@ -14,13 +14,13 @@ const DynamicGoogleMap = dynamic(
 const Contact = () => {
   const appContext = React.useContext(AppContext);
 
-  const appConfig = appContext.configData;
-  const geo = appConfig.locations[0].geoLocation;
-
-  useEffect(() => {
-    if (appContext) {
-    }
-  }, []);
+  // todo: how to correct the appContext not initialized on time
+  // const appConfig = appContext.configData;
+  // const geo = appConfig.locations[0].geoLocation;
+  const geo: IGeoLocation = {
+    lat: "34.067407",
+    lng: "-118.388431",
+  };
 
   return (
     <section className="p-0 pb-4 pb-md-0 bg-dark position-relative">
