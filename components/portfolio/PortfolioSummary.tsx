@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
 import SummaryItem from "./SummaryItem";
+import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
 
 const options = {
   items: 1,
@@ -37,24 +38,41 @@ const PortfolioSummary = () => {
     );
   });
 
+  const imageHoverItems = PortfolioSummaryData.map((item, index) => {
+    return (
+      <ImageHoverInfo
+        key={index}
+        title={item.title}
+        image={item.mainImage}
+        description={item.description}
+        imageAlt={item.mainImageAlt}
+      />
+    );
+  });
+
   return (
     <div className="container">
       <div className="row d-flex justify-content-between align-items-center">
         <div className="col-sm-8 mb-3">
           <h2 className="display-5 mb-0 mb-sm-4 text-dark-stroke">
-            Our Portfolio
+            Shop Prebuilt projects
           </h2>
         </div>
         <div className="col-sm-4 mb-4 text-start text-sm-end">
           <a href="#" className="btn btn-line text-dark mt-3">
-            View our work
+            View all here
           </a>
         </div>
+        <p className="lead mb-5">
+          These are some of my latest projects, which I have developed as a
+          starter for your next project. You can use these projects as the
+          foundations for your next amazing project.
+        </p>
       </div>
       <div className="row">
         <div className="col-lg-12">
           <TinySliderComponent options={options} classNames="dots-bordered">
-            {items}
+            {imageHoverItems}
           </TinySliderComponent>
         </div>
       </div>

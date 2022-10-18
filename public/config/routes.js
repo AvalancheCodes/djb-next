@@ -2,27 +2,33 @@ export const offcanvasRoutes = [
   {
     name: "home",
     friendlyName: "Home",
+    title: "No place like home",
     path: "/",
-  },
-  {
-    name: "About me",
-    friendlyName: "Approach me",
-    path: "/about",
-  },
-  {
-    name: "Contact",
-    friendlyName: "Contact",
-    path: "/contact/contact",
-  },
-  {
-    name: "Projects",
-    friendlyName: "Projects",
-    path: "/projects",
   },
   {
     name: "Services",
     friendlyName: "Services",
+    title: "A variety of services to meet your needs",
     path: "/services",
+  },
+  {
+    name: "Approach",
+    friendlyName: "Approach",
+    title: "This is how the magic happens",
+    path: "/about",
+  },
+
+  {
+    name: "Projects",
+    friendlyName: "Projects",
+    title: "Prebuilt basic projects && customization services",
+    path: "/projects",
+  },
+  {
+    name: "Contact",
+    friendlyName: "Contact",
+    title: "Don't be shy, say hello",
+    path: "/contact/contact",
   },
 ];
 
