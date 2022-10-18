@@ -37,11 +37,7 @@ const Contact = () => {
           </div>
           <div className="col-md-6 col-md-full-right">
             <div className="position-md-absolute end-0 top-0 w-100 h-400 h-md-800 bg-dark">
-              <DynamicGoogleMap
-                zoom={15}
-                geo={geo}
-                size={{ width: 400, height: 400 }}
-              />
+              <DynamicGoogleMap geo={geo} size={{ width: 400, height: 400 }} />
             </div>
           </div>
         </div>
