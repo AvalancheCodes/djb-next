@@ -40,7 +40,7 @@ export default function Home() {
         <Testimonials />
       </section>
       {/*    Technology   */}
-      <section className="pt-0 mt-7">
+      <section className="pt-0 mb-5">
         <LogoBanner />
       </section>
       <section className="pt-4">

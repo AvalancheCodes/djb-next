@@ -6,7 +6,7 @@ const Offcanvas = (props) => {
   return (
     <div
       className="offcanvas offcanvas-end bg-dark"
-      tabIndex="-1"
+      // tabIndex="-1"
       id="offcanvasEnd"
       aria-labelledby="offcanvasEnd"
     >
@@ -28,18 +28,19 @@ const Offcanvas = (props) => {
                   {route.friendlyName}
                 </a>
               </Link>
+              <p className="align-self-center mt-0 mt-md-5">— {route.title}</p>
             </li>
           ))}
         </ul>
         <div className="mt-auto mb-5">
           <a
-            href="components/header/offcanvas#"
+            href="components/header/offcanvas#Offcanvas.tsx"
             className="font-heading text-white text-primary-hover d-block mb-3"
           >
             hello@DavidBarel.com
           </a>
           <a
-            href="components/header/offcanvas#"
+            href="components/header/offcanvas#Offcanvas.tsx"
             className="font-heading text-white text-primary-hover"
           >
             +(800)300-8690

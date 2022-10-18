@@ -3408,7 +3408,7 @@ defineJQueryPlugin(NAME$6, Modal);
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v5.0.0): offcanvas.js
+ * Bootstrap (v5.0.0): Offcanvas.tsx
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
