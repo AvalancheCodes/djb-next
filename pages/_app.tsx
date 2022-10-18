@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <AppContext.Provider value={webApp}>
       <PublicLayout>
-        s
         <Preloader />
         <Component {...pageProps} />
       </PublicLayout>

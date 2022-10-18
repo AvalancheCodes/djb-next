@@ -1,25 +1,28 @@
+import IAppConfig from "./IAppConfig";
+
 class WebApp {
   name: string;
-  version: string;
   domain: string;
-  description: string;
-  image: string;
-  category: string;
   createdDate: Date;
+  updatedDate: Date;
   initiated: boolean;
-  author: string;
+  configData: IAppConfig;
 
   constructor(domain: string) {
-    this.domain = "domain";
-    this._readConfig();
-    //lastly
-    this.initiated = true;
+    this.domain = domain;
+    this._initApp();
   }
 
-  _readConfig() {
-    fetch("config/appConfig.json", { mode: "no-cors" }).then((response) => {
-      return response.json();
-    });
+  _initApp() {
+    fetch("/api/public/config", { mode: "no-cors" })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        this.configData = data;
+        this.initiated = true;
+        this.domain = data.domain || this.domain;
+        this.createdDate = new Date();
+      });
   }
 }
 
