@@ -15,7 +15,7 @@ const PortfolioSummaryData = [
     price: 2500,
   },
   {
-    id: "2",
+    id: 2,
     title: "The ultimate React Dashboard",
     description:
       "A beautiful, fully responsive, React Dashboard built with Bootstrap 5. " +
@@ -29,7 +29,7 @@ const PortfolioSummaryData = [
     price: 2890,
   },
   {
-    id: "3",
+    id: 3,
     title: "Serverless Next.js",
     description:
       "Take advantage of the power of Next.js and the serverless " +
