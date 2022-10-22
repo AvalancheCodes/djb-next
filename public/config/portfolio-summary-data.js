@@ -16,7 +16,7 @@ const PortfolioSummaryData = [
   },
   {
     id: 2,
-    title: "The ultimate React Dashboard",
+    title: "React Dashboard",
     description:
       "A beautiful, fully responsive, React Dashboard built with Bootstrap 5. " +
       "SCSS, and Webpack 5. The very recent technology at your service. ",

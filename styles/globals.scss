@@ -10,22 +10,30 @@
 @import "tiny-slider/dist/tiny-slider.css";
 
 // Create set of relative positioning utilities
-$left: 'left';
-$right: 'right';
-$top: 'top';
-$bottom: 'bottom';
+$left: "left";
+$right: "right";
+$top: "top";
+$bottom: "bottom";
 $positions: ($left, $right, $top, $bottom);
 
-@mixin position-object($type:"relative", $shift_direction: $left, $shift_value: 0 ){
+@mixin position-object(
+  $type: "relative",
+  $shift_direction: $left,
+  $shift_value: 0
+) {
   .relative-#{ $shift_direction }-#{ $shift_value } {
-    position: #{ $type };
+    position: #{$type};
     // If shiftDirection is left or right, set left or right
     @if $shift_direction == $left or $shift_direction == $top {
-      #{ $shift_direction }: #{ "-" + $shift_value }px;
-    } @else{
-      #{ $shift_direction }: #{ $shift_value }px;
+      #{ $shift_direction }: #{"-" + $shift_value}px;
+    } @else {
+      #{ $shift_direction }: #{$shift_value}px;
     }
   }
+}
+
+@mixin transparent-bg-color($color, $value) {
+  background-color: rgba($color, $value);
 }
 
 // Generate 25 relative positioning utilities
@@ -36,14 +44,12 @@ $positions: ($left, $right, $top, $bottom);
   }
 }
 
-
-.overall{
+.overall {
   position: relative;
   left: -25px;
 }
 
-
-.offcanvas-end.show{
+.offcanvas-end.show {
   animation: 20s fadeOut;
   animation-fill-mode: forwards;
 }
@@ -66,3 +72,56 @@ $positions: ($left, $right, $top, $bottom);
   }
 }
 
+/* Shopping Cart */
+
+.notification-indicator {
+  span {
+    width: 4r;
+  }
+  .number-badge[data-icon-content]:after {
+    position: absolute;
+    right: 10%;
+    top: 8%;
+    content: attr(data-icon-content);
+    font-size: 40%;
+    padding: 0.2em;
+    border-radius: 50%;
+    line-height: 1em;
+    color: white;
+    @include transparent-bg-color($primary, 0.85);
+    text-align: center;
+    width: 1.5em;
+    height: 1.5em;
+    font-weight: bold;
+  }
+  .number-badge i {
+    color: $secondary;
+  }
+
+  .number-badge {
+    width: 4rem;
+    height: 4rem;
+    :hover {
+      @include transparent-bg-color(#fff, 0.3);
+      border: 1px solid $primary;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.85rem;
+      //opacity: 0;
+      //transition: opacity 0.3s 0.85s;
+    }
+  }
+}
+
+.action-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  /* width: 100%; */
+  /* height: 100%; */
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  z-index: 1000;
+}

@@ -10,7 +10,7 @@ export interface IShopAction {
   type: EshopActionType;
   payload: any;
 }
-const productsReducer = (state, action: IShopAction) => {
+const shopReducer = (state, action: IShopAction) => {
   switch (action.type) {
     case EshopActionType.TOGGLE_CART:
       return {
@@ -37,4 +37,4 @@ const productsReducer = (state, action: IShopAction) => {
   }
 };
 
-export default productsReducer;
+export default shopReducer;

@@ -1,5 +1,11 @@
 import React from "react";
 import Link from "next/link";
+// import CartIcon from "../shop/CartIcon";
+import dynamic from "next/dynamic";
+
+const CartIcon = dynamic(() => import("../shop/CartIcon"), {
+  ssr: false,
+} as any);
 
 const TopNav = (props) => {
   return (
@@ -18,8 +24,12 @@ const TopNav = (props) => {
             </h6>
           </a>
         </Link>
-        <div className="navbar-nav navbar-nav flex-row align-items-center">
-          <div className="nav-item ms-4">
+
+        <div className="navbar-nav flex-row align-items-center">
+          <div className="nav-item">
+            <CartIcon iconContent={4} />
+          </div>
+          <div className="nav-item ms-1">
             <a
               className="nav-link p-0 flex-row"
               data-bs-toggle="offcanvas"
@@ -28,7 +38,7 @@ const TopNav = (props) => {
               aria-controls="offcanvasEnd"
             >
               <span
-                className="font-heading fw-bold"
+                className="font-heading fw-bold me-2"
                 data-bs-target="#offcanvasEnd"
               >
                 Menu

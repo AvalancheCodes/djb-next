@@ -62,6 +62,8 @@ const PortfolioSummary = () => {
         image={item.mainImage}
         description={item.description}
         imageAlt={item.mainImageAlt}
+        showDescription={true}
+        descriptionLength={100}
       />
     );
   });
