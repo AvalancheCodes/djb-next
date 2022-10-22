@@ -13,8 +13,8 @@ const CheckboxFieldComponent = (props) => {
 };
 
 const CheckboxSelectionSet = ({ options }) => {
-  const checkboxes = options.map((option) => {
-    return <CheckboxFieldComponent {...option} />;
+  const checkboxes = options.map((option, index) => {
+    return <CheckboxFieldComponent {...option} key={index} />;
   });
   return <div>{checkboxes}</div>;
 };

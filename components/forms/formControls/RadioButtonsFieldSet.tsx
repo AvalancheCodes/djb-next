@@ -20,8 +20,8 @@ const RadioButton: React.FC<RadioButtonField | null> = (props) => {
 };
 
 const RadioButtonsFieldSet = ({ buttons }) => {
-  const radioButtons = buttons.map((button) => {
-    return <RadioButton {...button} />;
+  const radioButtons = buttons.map((button, index) => {
+    return <RadioButton {...button} key={index} />;
   });
   return <div className="d-block my-3">{radioButtons}</div>;
 };
