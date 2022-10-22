@@ -4,6 +4,7 @@ import Preloader from "../components/preloader";
 import React, { useContext, useEffect, useState } from "react";
 import WebApp from "../model/WebApp";
 import AppContext from "../context/AppContext";
+import ShopProvider from "../context/shop/ShopProvider";
 
 function MyApp({ Component, pageProps }) {
   const appContext = useContext(AppContext);
@@ -16,10 +17,12 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <AppContext.Provider value={webApp}>
-      <PublicLayout>
-        <Preloader />
-        <Component {...pageProps} />
-      </PublicLayout>
+      <ShopProvider>
+        <PublicLayout>
+          <Preloader />
+          <Component {...pageProps} />
+        </PublicLayout>
+      </ShopProvider>
     </AppContext.Provider>
   );
 }

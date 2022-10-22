@@ -40,6 +40,14 @@ const Contact = () => {
             </div>
             <div className="col-md-6 col-md-full-right">
               <div className="position-md-absolute end-0 top-0 w-100 h-400 h-md-800 bg-dark">
+                {/*<AppContext.Consumer>*/}
+                {/*  {(appContext) => {*/}
+                {/*    const appConfig = appContext.configData;*/}
+                {/*    const geo = appConfig.locations[0].geoLocation;*/}
+                {/*    console.log("geo::=>", geo);*/}
+                {/*    return <div>App context</div>;*/}
+                {/*  }}*/}
+                {/*</AppContext.Consumer>*/}
                 <DynamicGoogleMap
                   geo={geo}
                   size={{ width: 400, height: 400 }}

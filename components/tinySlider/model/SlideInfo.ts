@@ -9,6 +9,8 @@ export interface IHoverInfo {
 class SlideInfo {
   title: string;
   description: string;
+  showDescription?: boolean;
+  descriptionLength?: number;
   image: string;
   imageAlt: string;
   link?: string;

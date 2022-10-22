@@ -1,6 +1,6 @@
 import React from "react";
 import Offcanvas from "./Offcanvas";
-import TopNav from "./topnav";
+import TopNav from "./TopNav";
 
 const Header = () => {
   // Close offcanvas when clicking outside of it or when pressing
