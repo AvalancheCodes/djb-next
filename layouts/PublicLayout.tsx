@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../components/header/Header";
-import Preloader from "../../components/preloader";
-import Footer from "../../components/footer/footer";
+import Header from "../components/header/Header";
+import Preloader from "../components/preloader";
+import Footer from "../components/footer/footer";
 
 const PublicLayout = ({ children }) => {
   // Set the margin of <main> to the height of the footer

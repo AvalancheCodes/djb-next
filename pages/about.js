@@ -1,5 +1,5 @@
 import React from "react";
-import PublicLayout from "./layouts/PublicLayout";
+import PublicLayout from "../layouts/PublicLayout";
 import Head from "next/head";
 import Script from "next/script";
 import Image from "next/image";

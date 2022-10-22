@@ -7,6 +7,7 @@ export interface IHoverInfo {
 }
 
 class SlideInfo {
+  id: number;
   title: string;
   description: string;
   showDescription?: boolean;

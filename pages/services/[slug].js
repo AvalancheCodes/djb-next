@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import ServiceLayout from "../layouts/service-layout";
+import ServiceLayout from "../../layouts/service-layout";
 import BreadCrumbs from "../../components/breadcrumb/bread-crumbs";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";

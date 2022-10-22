@@ -76,7 +76,8 @@ $positions: ($left, $right, $top, $bottom);
 
 .notification-indicator {
   span {
-    width: 4r;
+    width: 4rem;
+    pointer-events: none;
   }
   .number-badge[data-icon-content]:after {
     position: absolute;
@@ -96,6 +97,7 @@ $positions: ($left, $right, $top, $bottom);
   }
   .number-badge i {
     color: $secondary;
+    pointer-events: none;
   }
 
   .number-badge {

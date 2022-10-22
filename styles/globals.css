@@ -18988,7 +18988,8 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 }
 /* Shopping Cart */
 .notification-indicator span {
-  width: 4r;
+  width: 4rem;
+  pointer-events: none;
 }
 .notification-indicator .number-badge[data-icon-content]:after {
   position: absolute;
@@ -19008,6 +19009,7 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 }
 .notification-indicator .number-badge i {
   color: #AA8373;
+  pointer-events: none;
 }
 .notification-indicator .number-badge {
   width: 4rem;

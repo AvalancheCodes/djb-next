@@ -1,5 +1,5 @@
 import "../styles/globals.scss";
-import PublicLayout from "./layouts/PublicLayout";
+import PublicLayout from "../layouts/PublicLayout";
 import Preloader from "../components/preloader";
 import React, { useContext, useEffect, useState } from "react";
 import WebApp from "../model/WebApp";

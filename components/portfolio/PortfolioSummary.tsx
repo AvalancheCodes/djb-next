@@ -57,6 +57,7 @@ const PortfolioSummary = () => {
   const imageHoverItems = PortfolioSummaryData.map((item, index) => {
     return (
       <ImageHoverInfo
+        id={item.id}
         key={index}
         title={item.title}
         image={item.mainImage}
