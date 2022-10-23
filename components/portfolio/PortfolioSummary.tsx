@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
-import SummaryItem from "./SummaryItem";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
 import CartIcon from "../shop/CartIcon";
 import ShopContext from "../../context/shop/ShopContext";
-import shopReducer, {
-  EshopActionType,
-  IShopAction,
-} from "../../reducers/shopReducer";
+import { EshopActionType, IShopAction } from "../../reducers/shopReducer";
 import { CartItem } from "../../model/shop/cart";
 
 const options = {
@@ -42,10 +38,6 @@ const TinySliderComponent = dynamic(
     ssr: false,
   }
 );
-
-const CartIconDynamic = dynamic(() => import("../shop/CartIcon"), {
-  ssr: false,
-} as any);
 
 const PortfolioSummary = () => {
   const shopContext = React.useContext(ShopContext);
