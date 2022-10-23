@@ -39,11 +39,11 @@ const TinySliderComponent = dynamic(
   }
 );
 
-const PortfolioSummary = () => {
+const PortfolioSummary = (): any => {
   const shopContext = React.useContext(ShopContext);
 
   // Handle Add to Cart click
-  const onAddToCartClickHandler = (event: any) => {
+  const onAddToCartClickHandler = (event: any): void => {
     const id = event.target.getAttribute("data-product-id");
     const shopConfig = shopContext.shopConfigStateValue;
     const product = shopConfig.products.find((p) => p.id === Number(id));
