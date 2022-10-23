@@ -19,7 +19,7 @@ const ShopProvider: FC<IProps> = ({ children }) => {
   const [shopState, dispatchShopState] = useReducer(shopReducer, shopConfig);
 
   let shopContextValue: IShopContext = {
-    shopConfigValue: shopState,
+    shopConfigStateValue: shopState,
     shopDispatch: dispatchShopState,
     viewCartClickHandler: () => {
       console.log("ShopProvider.viewCart");

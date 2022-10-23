@@ -53,7 +53,7 @@ const PortfolioSummary = () => {
   // Handle Add to Cart click
   const onAddToCartClickHandler = (event: any) => {
     const id = event.target.getAttribute("data-product-id");
-    const shopConfig = shopContext.shopConfigValue;
+    const shopConfig = shopContext.shopConfigStateValue;
     const product = shopConfig.products.find((p) => p.id === Number(id));
     debugger;
     if (!product) throw new Error(`Product not found for id ${id}`);

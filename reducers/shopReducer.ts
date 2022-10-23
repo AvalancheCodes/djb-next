@@ -1,3 +1,5 @@
+import ShopConfig from "../model/shop/ShopConfig";
+
 export enum EshopActionType {
   FETCH_PRODUCTS = "FETCH_PRODUCTS",
   ADD_TO_CART = "ADD_TO_CART",
@@ -12,9 +14,8 @@ export interface IShopAction {
   payload: any;
 }
 
-const shopReducer = (state: any, action: IShopAction): any => {
+const shopReducer = (state: ShopConfig, action: IShopAction): ShopConfig => {
   debugger;
-  const { shopConfigValue } = state;
   switch (action.type) {
     case EshopActionType.TOGGLE_CART:
       return {
@@ -25,8 +26,8 @@ const shopReducer = (state: any, action: IShopAction): any => {
         },
       };
     case EshopActionType.ADD_TO_CART:
-      shopConfigValue.cartItems.push(action.payload);
-      return shopConfigValue;
+      state.cartItems.push(action.payload);
+      return state;
     case EshopActionType.REMOVE_FROM_CART:
       return {
         ...state,

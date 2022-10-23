@@ -31,7 +31,7 @@ const TopNav: FC = () => {
         <div className="navbar-nav flex-row align-items-center">
           <div className="nav-item">
             <CartIcon
-              iconContent={shopContext.shopConfigValue.cartItems.length}
+              iconContent={shopContext.shopConfigStateValue.cartItems.length}
               dataProductId={0}
               iconClickHandler={shopContext.viewCartClickHandler}
             />
