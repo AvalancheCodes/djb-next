@@ -78,9 +78,6 @@ $positions: ($left, $right, $top, $bottom);
   span {
     width: 4rem;
     pointer-events: none;
-    :hover {
-      cursor: pointer;
-    }
   }
   .number-badge[data-icon-content]:after {
     position: absolute;
@@ -117,11 +114,14 @@ $positions: ($left, $right, $top, $bottom);
     }
   }
 }
+.btn-cart-icon:hover {
+  font-size: 1.35rem;
+}
 
 .action-container {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.25rem;
+  left: 0.25rem;
   /* width: 100%; */
   /* height: 100%; */
   display: flex;

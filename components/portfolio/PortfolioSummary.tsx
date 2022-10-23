@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
 import SummaryItem from "./SummaryItem";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
-// import CartIcon from "../shop/CartIcon";
+import CartIcon from "../shop/CartIcon";
 import ShopContext from "../../context/shop/ShopContext";
 
 const options = {
@@ -74,7 +74,7 @@ const PortfolioSummary = () => {
         descriptionLength={100}
       >
         {
-          <CartIconDynamic
+          <CartIcon
             iconContent={"+"}
             dataProductId={item.id}
             iconClickHandler={shopContext.onAddToCartClickHandler}

@@ -18,13 +18,13 @@ const ShopProvider = ({ children }) => {
     shopConfigValue: shopConfig,
     shopDispatch: dispatchShopState,
     onAddToCartClickHandler: (event) => {
-      console.log("ShopProvider.onAddToCartClickHandler");
       const id = event.target.getAttribute("data-product-id");
       const product = shopConfig.products.find((p) => p.id === Number(id));
-      shopConfig.cartItems.push(new CartItem(product, 1));
+      // shopConfig.cartItems.push(new CartItem(product, 1));
+      debugger;
       shopReducer(shopConfig, {
         type: EshopActionType.ADD_TO_CART,
-        payload: shopConfig,
+        payload: new CartItem(product, 1),
       });
     },
     viewCartClickHandler: () => {
