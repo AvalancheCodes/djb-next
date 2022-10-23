@@ -26,8 +26,10 @@ const shopReducer = (state: ShopConfig, action: IShopAction): ShopConfig => {
         },
       };
     case EshopActionType.ADD_TO_CART:
-      state.cartItems.push(action.payload);
-      return state;
+      return {
+        ...state,
+        cartItems: [...state.cartItems, action.payload],
+      };
     case EshopActionType.REMOVE_FROM_CART:
       return {
         ...state,
