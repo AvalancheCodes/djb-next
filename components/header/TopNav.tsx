@@ -10,7 +10,6 @@ const CartIcon = dynamic(() => import("../shop/CartIcon"), {
 
 const TopNav: FC = () => {
   const shopContext = useContext(ShopContext);
-  debugger;
 
   return (
     <nav className="navbar navbar-expand">

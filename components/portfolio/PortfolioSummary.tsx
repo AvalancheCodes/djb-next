@@ -5,7 +5,10 @@ import SummaryItem from "./SummaryItem";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
 import CartIcon from "../shop/CartIcon";
 import ShopContext from "../../context/shop/ShopContext";
-import shopReducer, { EshopActionType } from "../../reducers/shopReducer";
+import shopReducer, {
+  EshopActionType,
+  IShopAction,
+} from "../../reducers/shopReducer";
 import { CartItem } from "../../model/shop/cart";
 
 const options = {
@@ -50,19 +53,17 @@ const PortfolioSummary = () => {
   // Handle Add to Cart click
   const onAddToCartClickHandler = (event: any) => {
     const id = event.target.getAttribute("data-product-id");
-    const product = shopContext.shopConfigValue.products.find(
-      (p) => p.id === Number(id)
-    );
+    const shopConfig = shopContext.shopConfigValue;
+    const product = shopConfig.products.find((p) => p.id === Number(id));
+    debugger;
     if (!product) throw new Error(`Product not found for id ${id}`);
-    console.log("shopProvider::", shopContext.shopConfigValue);
+    console.log("shopProvider::", shopConfig);
 
-    shopReducer(
-      { shopConfigValue: shopContext.shopConfigValue },
-      {
-        type: EshopActionType.ADD_TO_CART,
-        payload: new CartItem(product, 1),
-      }
-    );
+    const action: IShopAction = {
+      type: EshopActionType.ADD_TO_CART,
+      payload: new CartItem(product, 1),
+    };
+    shopContext.shopDispatch(shopConfig, action);
   };
 
   const imageHoverItems = PortfolioSummaryData.map((item, index) => {

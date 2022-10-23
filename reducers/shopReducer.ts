@@ -4,6 +4,7 @@ export enum EshopActionType {
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
   UPDATE_CART_QUANTITY = "UPDATE_CART_QUANTITY",
   TOGGLE_CART = "TOGGLE_CART",
+  SET_REDUCER = "SET_REDUCER",
 }
 
 export interface IShopAction {
@@ -12,6 +13,7 @@ export interface IShopAction {
 }
 
 const shopReducer = (state: any, action: IShopAction): any => {
+  debugger;
   const { shopConfigValue } = state;
   switch (action.type) {
     case EshopActionType.TOGGLE_CART:
@@ -24,10 +26,7 @@ const shopReducer = (state: any, action: IShopAction): any => {
       };
     case EshopActionType.ADD_TO_CART:
       shopConfigValue.cartItems.push(action.payload);
-      const atc = {
-        shopConfigValue: shopConfigValue,
-      };
-      return atc;
+      return shopConfigValue;
     case EshopActionType.REMOVE_FROM_CART:
       return {
         ...state,

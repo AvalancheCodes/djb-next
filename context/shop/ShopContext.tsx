@@ -3,7 +3,7 @@ import { createContext } from "react";
 
 export interface IShopContext {
   shopConfigValue: ShopConfig;
-  shopDispatch?: (state: any, action: any) => void;
+  shopDispatch: (state: any, action: any) => void;
   checkProductInCart?: (product: any) => boolean;
   onAddToCartClickHandler?: (event: any) => void;
   viewCartClickHandler?: () => void;
