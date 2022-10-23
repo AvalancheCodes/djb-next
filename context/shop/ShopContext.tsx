@@ -1,9 +1,10 @@
 import ShopConfig from "../../model/shop/ShopConfig";
-import { createContext } from "react";
+import { createContext, Dispatch } from "react";
+import { IShopAction } from "@/reducers/shopReducer";
 
 export interface IShopContext {
   shopConfigStateValue: ShopConfig;
-  shopDispatch: (state: any, action: any) => void;
+  shopDispatch: Dispatch<IShopAction>;
   checkProductInCart?: (product: any) => boolean;
   onAddToCartClickHandler?: (event: any) => void;
   viewCartClickHandler?: () => void;
@@ -11,7 +12,7 @@ export interface IShopContext {
 
 const ShopContext = createContext<IShopContext>({
   shopConfigStateValue: new ShopConfig(),
-  shopDispatch: (state, action) => {},
+  shopDispatch: (action) => {},
   checkProductInCart: (product) => false,
   onAddToCartClickHandler: (event) => {},
 });

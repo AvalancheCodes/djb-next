@@ -63,7 +63,7 @@ const PortfolioSummary = () => {
       type: EshopActionType.ADD_TO_CART,
       payload: new CartItem(product, 1),
     };
-    shopContext.shopDispatch(shopConfig, action);
+    shopContext.shopDispatch(action);
   };
 
   const imageHoverItems = PortfolioSummaryData.map((item, index) => {
