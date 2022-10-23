@@ -5,6 +5,8 @@ import SummaryItem from "./SummaryItem";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
 import CartIcon from "../shop/CartIcon";
 import ShopContext from "../../context/shop/ShopContext";
+import shopReducer, { EshopActionType } from "../../reducers/shopReducer";
+import { CartItem } from "../../model/shop/cart";
 
 const options = {
   items: 1,
@@ -44,22 +46,23 @@ const CartIconDynamic = dynamic(() => import("../shop/CartIcon"), {
 
 const PortfolioSummary = () => {
   const shopContext = React.useContext(ShopContext);
-  const items = PortfolioSummaryData.map((item, index) => {
-    return (
-      <SummaryItem
-        key={index}
-        title={item.title}
-        text={item.text}
-        mainImage={item.mainImage}
-        secondaryImage={item.secondaryImage}
-        link={item.link}
-        description={undefined}
-        mainImageAlt={undefined}
-        secondaryImageAlt={undefined}
-        linkText={undefined}
-      />
+
+  // Handle Add to Cart click
+  const onAddToCartClickHandler = (event) => {
+    const id = event.target.getAttribute("data-product-id");
+    const product = shopContext.shopConfigValue.products.find(
+      (p) => p.id === Number(id)
     );
-  });
+    // shopConfig.cartItems.push(new CartItem(product, 1));
+    console.log("shopProvider::", shopContext.shopConfigValue);
+    shopReducer(
+      { shopConfigValue: shopContext.shopConfigValue },
+      {
+        type: EshopActionType.ADD_TO_CART,
+        payload: new CartItem(product, 1),
+      }
+    );
+  };
 
   const imageHoverItems = PortfolioSummaryData.map((item, index) => {
     return (
@@ -77,7 +80,7 @@ const PortfolioSummary = () => {
           <CartIcon
             iconContent={"+"}
             dataProductId={item.id}
-            iconClickHandler={shopContext.onAddToCartClickHandler}
+            iconClickHandler={onAddToCartClickHandler}
           />
         }
       </ImageHoverInfo>

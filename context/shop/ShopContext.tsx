@@ -6,14 +6,14 @@ export interface IShopContext {
   shopConfigValue: ShopConfig | null;
   shopDispatch?: (state, action) => void;
   checkProductInCart?: (product) => boolean;
-  onAddToCartClickHandler?: (event) => void;
+  // onAddToCartClickHandler?: (event) => void;
   viewCartClickHandler?: () => void;
 }
 const ShopContext = React.createContext<IShopContext | null>({
   shopConfigValue: new ShopConfig(),
   shopDispatch: (state, action) => {},
   checkProductInCart: (product) => false,
-  onAddToCartClickHandler: (event) => {},
+  // onAddToCartClickHandler: (event) => {},
 });
 
 export default ShopContext;

@@ -10,7 +10,6 @@ const CartIcon = dynamic(() => import("../shop/CartIcon"), {
 
 const TopNav = (props) => {
   const shopContext = React.useContext(ShopContext);
-  debugger;
 
   return (
     <nav className="navbar navbar-expand">
@@ -32,7 +31,7 @@ const TopNav = (props) => {
         <div className="navbar-nav flex-row align-items-center">
           <div className="nav-item">
             <CartIcon
-              iconContent={shopContext.shopConfigValue.cartItemsCount()}
+              iconContent={shopContext.shopConfigValue.cartItems.length}
               dataProductId={0}
               iconClickHandler={shopContext.viewCartClickHandler}
             />

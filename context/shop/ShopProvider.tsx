@@ -17,16 +17,19 @@ const ShopProvider = ({ children }) => {
   const shopContextValue: IShopContext = {
     shopConfigValue: shopConfig,
     shopDispatch: dispatchShopState,
-    onAddToCartClickHandler: (event) => {
-      const id = event.target.getAttribute("data-product-id");
-      const product = shopConfig.products.find((p) => p.id === Number(id));
-      // shopConfig.cartItems.push(new CartItem(product, 1));
-      debugger;
-      shopReducer(shopConfig, {
-        type: EshopActionType.ADD_TO_CART,
-        payload: new CartItem(product, 1),
-      });
-    },
+    // onAddToCartClickHandler: (event) => {
+    //   const id = event.target.getAttribute("data-product-id");
+    //   const product = shopConfig.products.find((p) => p.id === Number(id));
+    //   // shopConfig.cartItems.push(new CartItem(product, 1));
+    //   console.log("shopProvider::", shopConfig);
+    //   shopReducer(
+    //     { shopConfig },
+    //     {
+    //       type: EshopActionType.ADD_TO_CART,
+    //       payload: new CartItem(product, 1),
+    //     }
+    //   );
+    // },
     viewCartClickHandler: () => {
       console.log("ShopProvider.viewCart");
     },
