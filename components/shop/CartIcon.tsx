@@ -12,21 +12,18 @@ const CartIcon = ({ iconContent, dataProductId, iconClickHandler }) => {
 
   return (
     <button
-      className="notification-indicator"
+      className="btn btn-cart-icon p-0"
       onClick={iconClickHandler}
-      data-icon-content={iconContent}
       ref={iconRef}
     >
       <span
+        data-icon-content={iconContent}
         className="
               fa-stack fa-2x number-badge
               d-flex flex-row justify-content-center
               align-items-center"
       >
-        <i
-          className="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse fs-3"
-          data-count="4b"
-        ></i>
+        <i className="fa fa-shopping-cart fa-stack-1x fs-4"></i>
       </span>
     </button>
   );

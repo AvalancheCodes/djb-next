@@ -1,11 +1,8 @@
 import React from "react";
-import Image from "next/image";
-import SlideInfo from "../model/SlideInfo";
-import Link from "next/link";
 import CartIcon from "../../shop/CartIcon";
 import ShopContext from "../../../context/shop/ShopContext";
 
-const ImageHoverInfo: React.FC<SlideInfo> = (props) => {
+const ImageHoverInfo = ({ children, ...props }) => {
   const {
     id,
     title,
@@ -15,17 +12,10 @@ const ImageHoverInfo: React.FC<SlideInfo> = (props) => {
     showDescription,
     descriptionLength,
   } = props;
-  const shopContext = React.useContext(ShopContext);
 
   return (
     <div className="item">
-      <div className="action-container">
-        <CartIcon
-          iconContent={"+"}
-          dataProductId={id}
-          iconClickHandler={shopContext.onAddToCartClickHandler}
-        />
-      </div>
+      <div className="action-container">{children}</div>
       <div className="card card-metro">
         <div className="card-image grayscale">
           <img src={image} alt={imageAlt} />

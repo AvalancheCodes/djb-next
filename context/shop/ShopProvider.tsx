@@ -19,7 +19,6 @@ const ShopProvider = ({ children }) => {
     shopDispatch: dispatchShopState,
     onAddToCartClickHandler: (event) => {
       console.log("ShopProvider.onAddToCartClickHandler");
-      debugger;
       const id = event.target.getAttribute("data-product-id");
       const product = shopConfig.products.find((p) => p.id === Number(id));
       shopConfig.cartItems.push(new CartItem(product, 1));
@@ -27,6 +26,9 @@ const ShopProvider = ({ children }) => {
         type: EshopActionType.ADD_TO_CART,
         payload: shopConfig,
       });
+    },
+    viewCartClickHandler: () => {
+      console.log("ShopProvider.viewCart");
     },
   };
   return (

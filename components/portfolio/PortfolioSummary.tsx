@@ -3,6 +3,8 @@ import dynamic from "next/dynamic";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
 import SummaryItem from "./SummaryItem";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
+// import CartIcon from "../shop/CartIcon";
+import ShopContext from "../../context/shop/ShopContext";
 
 const options = {
   items: 1,
@@ -36,7 +38,12 @@ const TinySliderComponent = dynamic(
   }
 );
 
+const CartIconDynamic = dynamic(() => import("../shop/CartIcon"), {
+  ssr: false,
+} as any);
+
 const PortfolioSummary = () => {
+  const shopContext = React.useContext(ShopContext);
   const items = PortfolioSummaryData.map((item, index) => {
     return (
       <SummaryItem
@@ -65,7 +72,15 @@ const PortfolioSummary = () => {
         imageAlt={item.mainImageAlt}
         showDescription={true}
         descriptionLength={100}
-      />
+      >
+        {
+          <CartIconDynamic
+            iconContent={"+"}
+            dataProductId={item.id}
+            iconClickHandler={shopContext.onAddToCartClickHandler}
+          />
+        }
+      </ImageHoverInfo>
     );
   });
 

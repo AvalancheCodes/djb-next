@@ -21,6 +21,10 @@ class ShopConfig {
       type: "add",
     };
   }
+
+  cartItemsCount() {
+    return this.cartItems.length;
+  }
 }
 
 export default ShopConfig;

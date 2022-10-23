@@ -18987,14 +18987,17 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
   }
 }
 /* Shopping Cart */
-.notification-indicator span {
+.btn-cart-icon span {
   width: 4rem;
   pointer-events: none;
 }
-.notification-indicator .number-badge[data-icon-content]:after {
+.btn-cart-icon span :hover {
+  cursor: pointer;
+}
+.btn-cart-icon .number-badge[data-icon-content]:after {
   position: absolute;
-  right: 10%;
-  top: 8%;
+  right: 15%;
+  top: 20%;
   content: attr(data-icon-content);
   font-size: 40%;
   padding: 0.2em;
@@ -19007,15 +19010,15 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
   height: 1.5em;
   font-weight: bold;
 }
-.notification-indicator .number-badge i {
+.btn-cart-icon .number-badge i {
   color: #AA8373;
   pointer-events: none;
 }
-.notification-indicator .number-badge {
+.btn-cart-icon .number-badge {
   width: 4rem;
   height: 4rem;
 }
-.notification-indicator .number-badge :hover {
+.btn-cart-icon .number-badge :hover {
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid #F77948;
   border-radius: 50%;

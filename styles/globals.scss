@@ -74,15 +74,18 @@ $positions: ($left, $right, $top, $bottom);
 
 /* Shopping Cart */
 
-.notification-indicator {
+.btn-cart-icon {
   span {
     width: 4rem;
     pointer-events: none;
+    :hover {
+      cursor: pointer;
+    }
   }
   .number-badge[data-icon-content]:after {
     position: absolute;
-    right: 10%;
-    top: 8%;
+    right: 15%;
+    top: 20%;
     content: attr(data-icon-content);
     font-size: 40%;
     padding: 0.2em;
