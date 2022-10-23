@@ -1,14 +1,20 @@
-import React from "react";
-import portfolioSummaryData from "../../public/config/portfolio-summary-data";
 import ShopConfig from "../../model/shop/ShopConfig";
+import { createContext, Dispatch } from "react";
+import { IShopAction } from "@/reducers/shopReducer";
 
 export interface IShopContext {
-  shopConfig: object | null;
-  shopDispatch?: (state, action) => void;
-  checkProductInCart?: (product) => boolean;
+  shopConfigStateValue: ShopConfig;
+  shopDispatch: Dispatch<IShopAction>;
+  checkProductInCart?: (product: any) => boolean;
+  onAddToCartClickHandler?: (event: any) => void;
+  viewCartClickHandler?: () => void;
 }
-const ShopContext = React.createContext<IShopContext | null>({
-  shopConfig: new ShopConfig(),
+
+const ShopContext = createContext<IShopContext>({
+  shopConfigStateValue: new ShopConfig(),
+  shopDispatch: (action) => {},
+  checkProductInCart: (product) => false,
+  onAddToCartClickHandler: (event) => {},
 });
 
 export default ShopContext;

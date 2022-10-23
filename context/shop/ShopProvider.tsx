@@ -1,8 +1,9 @@
-import React, { useReducer } from "react";
+import { FC, ReactNode, useReducer } from "react";
 import ShopConfig from "../../model/shop/ShopConfig";
 import portfolioSummaryData from "../../public/config/portfolio-summary-data";
 import ShopContext, { IShopContext } from "./ShopContext";
-import shopReducer from "../../reducers/shopReducer";
+import shopReducer, { EshopActionType } from "../../reducers/shopReducer";
+import { CartItem } from "../../model/shop/cart";
 
 //Define a new ShopConfig object
 const shopConfig = new ShopConfig();
@@ -10,12 +11,21 @@ const shopConfig = new ShopConfig();
 shopConfig.initialProducts = portfolioSummaryData;
 shopConfig.products = portfolioSummaryData;
 
-const ShopProvider = ({ children }) => {
-  const [shopState, setShopState] = useReducer(shopReducer, shopConfig);
+interface IProps {
+  children: ReactNode;
+}
 
-  const shopContextValue: IShopContext = {
-    shopConfig: shopConfig,
+const ShopProvider: FC<IProps> = ({ children }) => {
+  const [shopState, dispatchShopState] = useReducer(shopReducer, shopConfig);
+
+  let shopContextValue: IShopContext = {
+    shopConfigStateValue: shopState,
+    shopDispatch: dispatchShopState,
+    viewCartClickHandler: () => {
+      console.log("ShopProvider.viewCart");
+    },
   };
+
   return (
     <ShopContext.Provider value={shopContextValue}>
       {children}

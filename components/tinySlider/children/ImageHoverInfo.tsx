@@ -1,11 +1,19 @@
-import React from "react";
-import Image from "next/image";
-import SlideInfo from "../model/SlideInfo";
-import Link from "next/link";
-import CartIcon from "../../shop/CartIcon";
+import { FC, ReactNode } from "react";
 
-const ImageHoverInfo: React.FC<SlideInfo> = (props) => {
+interface IProps {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  showDescription: boolean;
+  descriptionLength: number;
+  children: ReactNode;
+}
+
+const ImageHoverInfo: FC<IProps> = ({ children, ...props }) => {
   const {
+    id,
     title,
     description,
     image,
@@ -13,11 +21,10 @@ const ImageHoverInfo: React.FC<SlideInfo> = (props) => {
     showDescription,
     descriptionLength,
   } = props;
+
   return (
     <div className="item">
-      <div className="action-container">
-        <CartIcon iconContent={"+"} />
-      </div>
+      <div className="action-container">{children}</div>
       <div className="card card-metro">
         <div className="card-image grayscale">
           <img src={image} alt={imageAlt} />
@@ -26,16 +33,11 @@ const ImageHoverInfo: React.FC<SlideInfo> = (props) => {
         <div className="card-img-overlay d-flex flex-column">
           <div className="mt-auto card-text">
             <h5 className="text-white">{title}</h5>
-            {showDescription &&
-              (() => {
-                if (description.length) {
-                  return (
-                    <p className="small text-white mb-0 text-truncate">
-                      {description.substring(0, descriptionLength)}...
-                    </p>
-                  );
-                }
-              })()}
+            {showDescription && description.length && (
+              <p className="small text-white mb-0 text-truncate">
+                {description.substring(0, descriptionLength)}...
+              </p>
+            )}
           </div>
           <div className="d-flex justify-content-center ">
             <button className="btn btn-primary mt-3 col-6 col-sm-8">

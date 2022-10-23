@@ -1,12 +1,12 @@
 import IAppConfig from "./IAppConfig";
 
 class WebApp {
-  name: string;
-  domain: string;
-  createdDate: Date;
-  updatedDate: Date;
-  initiated: boolean;
-  configData: IAppConfig;
+  name!: string;
+  domain!: string;
+  createdDate!: Date;
+  updatedDate!: Date;
+  initiated!: boolean;
+  configData!: IAppConfig;
 
   constructor(domain: string) {
     this.domain = domain;

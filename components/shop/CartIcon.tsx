@@ -1,23 +1,41 @@
-import React, { useEffect, useRef } from "react";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FC, useEffect, useRef } from "react";
 
-const CartIcon = ({ iconContent }) => {
-  const iconRef = useRef(null);
+interface IProps {
+  iconContent: any;
+  dataProductId: any;
+  iconClickHandler: any;
+}
+
+const CartIcon: FC<IProps> = ({
+  iconContent,
+  dataProductId,
+  iconClickHandler,
+}) => {
+  const iconRef = useRef<HTMLButtonElement>(null!);
+
+  useEffect(() => {
+    if (iconRef.current !== null) {
+      console.log("CartIcon.useEffect", iconRef.current);
+      iconRef.current.setAttribute("data-product-id", dataProductId);
+    }
+  }, [dataProductId]);
 
   return (
-    <div className="notification-indicator">
+    <button
+      className="btn btn-cart-icon p-0"
+      onClick={iconClickHandler}
+      ref={iconRef}
+    >
       <span
-        className="fa-stack fa-2x number-badge d-flex flex-row
-        justify-content-center align-items-center"
         data-icon-content={iconContent}
+        className="
+              fa-stack fa-2x number-badge
+              d-flex flex-row justify-content-center
+              align-items-center"
       >
-        <i
-          ref={iconRef}
-          className="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse fs-3"
-          data-count="4b"
-        ></i>
+        <i className="fa fa-shopping-cart fa-stack-1x fs-4"></i>
       </span>
-    </div>
+    </button>
   );
 };
 

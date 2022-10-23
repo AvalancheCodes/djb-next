@@ -1,8 +1,19 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { FC } from "react";
 
-const SummaryItem = ({
+interface IProps {
+  title: string;
+  description?: string;
+  mainImage: string;
+  mainImageAlt?: string;
+  secondaryImage: string;
+  secondaryImageAlt?: string;
+  text: string;
+  link: string;
+  linkText?: string;
+}
+
+const SummaryItem: FC<IProps> = ({
   title,
   description,
   mainImage,

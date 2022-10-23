@@ -1,7 +1,14 @@
-import React from "react";
 import Image from "next/image";
+import { FC } from "react";
 
-const TestimonialItem = ({ title, avatar, text, name }) => {
+interface IProps {
+  title: string;
+  avatar: string;
+  text: string;
+  name: string;
+}
+
+const TestimonialItem: FC<IProps> = ({ title, avatar, text, name }) => {
   return (
     <div className="item px-3 px-md-6">
       <div

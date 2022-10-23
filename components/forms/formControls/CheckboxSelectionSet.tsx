@@ -1,7 +1,12 @@
-import React from "react";
-import { CheckboxField } from "../model/InputSet";
+import { FC } from "react";
 
-const CheckboxFieldComponent = (props) => {
+interface ICheckboxFieldComponentProps {
+  id: string;
+  label?: string;
+  className?: string;
+}
+
+const CheckboxFieldComponent: FC<ICheckboxFieldComponentProps> = (props) => {
   return (
     <div className="form-check">
       <input type="checkbox" className={props.className} id={props.id} />
@@ -12,7 +17,11 @@ const CheckboxFieldComponent = (props) => {
   );
 };
 
-const CheckboxSelectionSet = ({ options }) => {
+interface ICheckboxSelectionSet {
+  options: ICheckboxFieldComponentProps[];
+}
+
+const CheckboxSelectionSet: FC<ICheckboxSelectionSet> = ({ options }) => {
   const checkboxes = options.map((option, index) => {
     return <CheckboxFieldComponent {...option} key={index} />;
   });

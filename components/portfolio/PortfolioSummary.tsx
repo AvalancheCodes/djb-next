@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
-import SummaryItem from "./SummaryItem";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
+import CartIcon from "../shop/CartIcon";
+import ShopContext from "../../context/shop/ShopContext";
+import { EshopActionType, IShopAction } from "../../reducers/shopReducer";
+import { CartItem } from "../../model/shop/cart";
 
 const options = {
   items: 1,
@@ -36,27 +39,29 @@ const TinySliderComponent = dynamic(
   }
 );
 
-const PortfolioSummary = () => {
-  const items = PortfolioSummaryData.map((item, index) => {
-    return (
-      <SummaryItem
-        key={index}
-        title={item.title}
-        text={item.text}
-        mainImage={item.mainImage}
-        secondaryImage={item.secondaryImage}
-        link={item.link}
-        description={undefined}
-        mainImageAlt={undefined}
-        secondaryImageAlt={undefined}
-        linkText={undefined}
-      />
-    );
-  });
+const PortfolioSummary = (): any => {
+  const shopContext = React.useContext(ShopContext);
+
+  // Handle Add to Cart click
+  const onAddToCartClickHandler = (event: any): void => {
+    const id = event.target.getAttribute("data-product-id");
+    const shopConfig = shopContext.shopConfigStateValue;
+    const product = shopConfig.products.find((p) => p.id === Number(id));
+    debugger;
+    if (!product) throw new Error(`Product not found for id ${id}`);
+    console.log("shopProvider::", shopConfig);
+
+    const action: IShopAction = {
+      type: EshopActionType.ADD_TO_CART,
+      payload: new CartItem(product, 1),
+    };
+    shopContext.shopDispatch(action);
+  };
 
   const imageHoverItems = PortfolioSummaryData.map((item, index) => {
     return (
       <ImageHoverInfo
+        id={item.id}
         key={index}
         title={item.title}
         image={item.mainImage}
@@ -64,7 +69,15 @@ const PortfolioSummary = () => {
         imageAlt={item.mainImageAlt}
         showDescription={true}
         descriptionLength={100}
-      />
+      >
+        {
+          <CartIcon
+            iconContent={"+"}
+            dataProductId={item.id}
+            iconClickHandler={onAddToCartClickHandler}
+          />
+        }
+      </ImageHoverInfo>
     );
   });
 

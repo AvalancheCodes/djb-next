@@ -1,15 +1,10 @@
-import React from "react";
-import InputFieldSet from "../../components/forms/formControls/InputFieldSet";
-import SelectFieldSet from "../../components/forms/formControls/SelectFieldSet";
 import formConfig from "../../components/forms/formConfig";
-import RadioButtonsFieldSet from "../../components/forms/formControls/RadioButtonsFieldSet";
 import PaymentInfo from "../../components/forms/checkout/PaymentInfo";
 import CheckboxSelectionSet from "../../components/forms/formControls/CheckboxSelectionSet";
 import BasicAccountInfoForm from "../../components/forms/checkout/BasicAccountInfoForm";
+import { FC } from "react";
 
-console.log(formConfig);
-
-const Index = () => {
+const Index: FC = () => {
   const {
     firstName,
     lastName,
