@@ -48,13 +48,14 @@ const PortfolioSummary = () => {
   const shopContext = React.useContext(ShopContext);
 
   // Handle Add to Cart click
-  const onAddToCartClickHandler = (event) => {
+  const onAddToCartClickHandler = (event: any) => {
     const id = event.target.getAttribute("data-product-id");
     const product = shopContext.shopConfigValue.products.find(
       (p) => p.id === Number(id)
     );
-    // shopConfig.cartItems.push(new CartItem(product, 1));
+    if (!product) throw new Error(`Product not found for id ${id}`);
     console.log("shopProvider::", shopContext.shopConfigValue);
+
     shopReducer(
       { shopConfigValue: shopContext.shopConfigValue },
       {
