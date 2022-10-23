@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 import Link from "next/link";
 
 const LightFeatureItem = (props) => {
-    const { title, slug, excerpt, iconClass, subServices} = props;
+  const { title, slug, excerpt, iconClass, subServices } = props;
 
-    if (!subServices) {
-        console.log(props);
-        return;
-    }
+  if (!subServices) {
+    console.log(props);
+    return;
+  }
 
-    const items = subServices.map((subService, index) => {
-        return (
+  const items = subServices.map((subService, index) => {
+    return (
             <Link href={`/services/${subService.slug}`} key={index}>
                 <a className="list-group-item bg-transparent">
                     {subService.title}
@@ -20,9 +20,9 @@ const LightFeatureItem = (props) => {
                     {/*</div>*/}
                 </a>
             </Link>
-        )
-    } );
-    return (
+    );
+  } );
+  return (
         <div className="col-md-6 col-lg-4">
             <div className="mb-6">
                 <span className="text-primary display-6">
@@ -36,7 +36,7 @@ const LightFeatureItem = (props) => {
                 <div className="list-group list-group-borderless list-unstyled"> {items}</div>
             </div>
         </div>
-    );
+  );
 };
 
 export default LightFeatureItem;

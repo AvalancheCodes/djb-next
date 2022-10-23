@@ -1,11 +1,11 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import DottedRectangle from "../../figures/dotted-rectangle";
 
 const ServicesHero = () => {
-    const srcMain = "https://via.placeholder.com/770x770/999999";
-    const srcSecondary = "https://via.placeholder.com/770x770/666666";
-    return (
+  const srcMain = "https://via.placeholder.com/770x770/999999";
+  const srcSecondary = "https://via.placeholder.com/770x770/666666";
+  return (
         <section className="bg-white pattern-overlay-3 pt-0 position-relative h-400
                         h-md-600 h-lg-700 h-xl-800">
             <div className="container position-relative">
@@ -37,7 +37,7 @@ const ServicesHero = () => {
 
             </div>
         </section>
-    );
+  );
 };
 
 export default ServicesHero;

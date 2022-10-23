@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Newsletter = () => {
-    return (
-        <>
+  return (
+    <>
             <h5 className="mb-4 text-white">Stay in touch</h5>
             <form>
                 <label className="form-label">Subscribe to our newsletter to receive updates.</label>
@@ -14,8 +14,8 @@ const Newsletter = () => {
                     </button>
                 </div>
             </form>
-        </>
-    );
+    </>
+  );
 };
 
 export default Newsletter;

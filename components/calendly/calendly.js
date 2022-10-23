@@ -1,29 +1,29 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from "react";
 import Script from "next/script";
-import {InlineWidget, PopupButton, PopupWidget} from "react-calendly";
+import { InlineWidget, PopupButton, PopupWidget } from "react-calendly";
 
 const createCalendlyScript = () =>{
-    const script = document.createElement('script');
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-}
+  const script = document.createElement("script");
+  script.src = "https://assets.calendly.com/assets/external/widget.js";
+  script.async = true;
+  document.body.appendChild(script);
+};
 
 const Calendly = () => {
-    const [rootElement, setRootElement] = React.useState(null);
+  const [rootElement, setRootElement] = React.useState(null);
 
-    const widgetContainerRef = useRef();
-    const url = "https://calendly.com/david-j-barel";
+  const widgetContainerRef = useRef();
+  const url = "https://calendly.com/david-j-barel";
 
-    useEffect(() => {
-        const rootElement =document.getElementById("root") ;
-        setRootElement(rootElement);
-    } , []);
+  useEffect(() => {
+    const rootElement =document.getElementById("root") ;
+    setRootElement(rootElement);
+  } , []);
 
-    return (
-        <>
-            {/*<Script id={"calendly-script"} type="text/javascript"*/}
-            {/*         src="https://assets.calendly.com/assets/external/widget.js" />*/}
+  return (
+    <>
+      {/*<Script id={"calendly-script"} type="text/javascript"*/}
+      {/*         src="https://assets.calendly.com/assets/external/widget.js" />*/}
             <PopupButton
                 url={url}
                 /*
@@ -33,8 +33,8 @@ const Calendly = () => {
                 rootElement={ rootElement }
                 text="Click here to schedule!"
             />
-        </>
-    );
+    </>
+  );
 };
 
 export default Calendly;

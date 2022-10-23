@@ -7,10 +7,10 @@ const Header = () => {
   // the nav-link button in the Header component
   React.useEffect(() => {
     const offcanvasOpener = document.querySelector(
-      '[data-bs-toggle="offcanvas"]'
+      "[data-bs-toggle=\"offcanvas\"]"
     );
     const offcanvasCloser = document.querySelector(
-      '[data-bs-dismiss="offcanvas"]'
+      "[data-bs-dismiss=\"offcanvas\"]"
     );
     const offcanvas = document.querySelector("#offcanvasEnd");
     const navLinks = document.querySelectorAll(".nav-link");

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const CleanTextHero = () => {
-    return (
+  return (
         <div>
 
         </div>
-    );
+  );
 };
 
 export default CleanTextHero;
