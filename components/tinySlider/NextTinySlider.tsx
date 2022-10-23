@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { tns } from "tiny-slider/dist/tiny-slider";
+import { FC, ReactNode, useEffect, useRef } from "react";
 
-const NextTinySlider = ({ options, children, classNames }) => {
-  const containerRef = React.createRef<HTMLDivElement>();
-  const innerRef = React.createRef<HTMLDivElement>();
+const { tns } = require("tiny-slider/dist/tiny-slider");
+
+interface IProps {
+  options: any;
+  children: ReactNode;
+  classNames: string;
+}
+
+const NextTinySlider: FC<IProps> = ({ options, children, classNames }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -14,11 +21,11 @@ const NextTinySlider = ({ options, children, classNames }) => {
 
       if (classNames) {
         classNames.split(" ").forEach((className) => {
-          containerRef.current.classList.add(className);
+          containerRef.current?.classList.add(className);
         });
       }
     }
-  }, []);
+  }, [classNames, options]);
 
   return (
     <div

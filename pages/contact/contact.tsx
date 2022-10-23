@@ -1,19 +1,17 @@
-import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
-import ContactMap from "../../components/contact/ContactMap";
 import ContactForm from "../../components/contact/ContactForm";
 import AppContext from "../../context/AppContext";
-import GoogleIframeMap from "../../components/googleMap/GoogleIframeMap";
 import { IGeoLocation } from "../../model/ILocation";
 import ContactChannels from "../../components/contact/contactChannels/ContactChannels";
+import { FC, useContext } from "react";
 
 const DynamicGoogleMap = dynamic(
   () => import("../../components/googleMap/GoogleIframeMap"),
   { ssr: false }
 );
 
-const Contact = () => {
-  const appContext = React.useContext(AppContext);
+const Contact: FC = () => {
+  const appContext = useContext(AppContext);
 
   // todo: how to correct the appContext not initialized on time
   // const appConfig = appContext.configData;

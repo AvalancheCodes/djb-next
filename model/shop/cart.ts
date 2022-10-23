@@ -1,10 +1,14 @@
 import Product from "./Product";
 
 export class CartItem {
-  id: number;
+  // TODO: What is that?
+  // Why was it not initialized in any way?
+  id: number = 1;
+
   product: Product;
   quantity: number;
   totalPrice: number;
+
   constructor(product: Product, quantity: number) {
     this.product = product;
     this.quantity = quantity;
@@ -23,6 +27,7 @@ class Cart {
   items: CartItem[];
   totalItems: number;
   totalPrice: number;
+
   constructor() {
     this.items = [];
     this.totalItems = 0;

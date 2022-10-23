@@ -1,6 +1,6 @@
-import React from "react";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
 import ProductItem from "./ProductItem";
+import { FC } from "react";
 
 const items = PortfolioSummaryData.map((item, index) => {
   return (
@@ -18,7 +18,11 @@ const items = PortfolioSummaryData.map((item, index) => {
   );
 });
 
-const ProductsGrid = ({ numberOfColumns }) => {
+interface IProps {
+  numberOfColumns: string;
+}
+
+const ProductsGrid: FC<IProps> = ({ numberOfColumns }) => {
   const gridClass = `col-sm-6 col-lg-${numberOfColumns} mb-30`;
   return (
     <div className="container">

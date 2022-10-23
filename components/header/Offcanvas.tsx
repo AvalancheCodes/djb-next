@@ -1,8 +1,8 @@
-import React from "react";
 import Link from "next/link";
 import { offcanvasRoutes } from "../../public/config/routes";
+import { FC } from "react";
 
-const Offcanvas = (props) => {
+const Offcanvas: FC = () => {
   return (
     <div
       className="offcanvas offcanvas-end bg-dark"

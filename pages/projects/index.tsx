@@ -1,8 +1,7 @@
-import React from "react";
-import PortfolioSummary from "../../components/portfolio/PortfolioSummary";
 import ProductsGrid from "../../components/productsGrid/ProductsGrid";
+import { FC } from "react";
 
-const Projects = () => {
+const Projects: FC = () => {
   return (
     <>
       <section>

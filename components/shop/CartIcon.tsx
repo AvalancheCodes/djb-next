@@ -1,14 +1,24 @@
-import React, { useCallback, useContext, useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 
-const CartIcon = ({ iconContent, dataProductId, iconClickHandler }) => {
-  const iconRef = useRef(null);
+interface IProps {
+  iconContent: any;
+  dataProductId: any;
+  iconClickHandler: any;
+}
+
+const CartIcon: FC<IProps> = ({
+  iconContent,
+  dataProductId,
+  iconClickHandler,
+}) => {
+  const iconRef = useRef<HTMLButtonElement>(null!);
 
   useEffect(() => {
     if (iconRef.current !== null) {
       console.log("CartIcon.useEffect", iconRef.current);
       iconRef.current.setAttribute("data-product-id", dataProductId);
     }
-  }, []);
+  }, [dataProductId]);
 
   return (
     <button

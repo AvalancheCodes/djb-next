@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
 import { testimonialsData } from "../../public/config/testimonials-data";
 import TestimonialItem from "./TestemonialItem";
 import dynamic from "next/dynamic";
+import { FC } from "react";
 
 const options = {
   items: 1,
@@ -11,8 +11,8 @@ const options = {
   controls: true,
   nav: false,
   controlsText: [
-    '<i class="fas fa-chevron-left"></i>',
-    '<i class="fas fa-chevron-right"></i>',
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
   ],
   // todo: add responsive options
   // responsive: {
@@ -41,7 +41,7 @@ const TinySliderComponent = dynamic(
   }
 );
 
-const Testimonials = () => {
+const Testimonials: FC = () => {
   // Init tiny slider in useEffect
   const items = testimonialsData.map((testimonial, index) => {
     return (

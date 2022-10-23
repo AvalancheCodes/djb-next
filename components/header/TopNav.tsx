@@ -1,4 +1,4 @@
-import React from "react";
+import { FC, useContext } from "react";
 import Link from "next/link";
 // import CartIcon from "../shop/CartIcon";
 import dynamic from "next/dynamic";
@@ -8,8 +8,9 @@ const CartIcon = dynamic(() => import("../shop/CartIcon"), {
   ssr: false,
 } as any);
 
-const TopNav = (props) => {
-  const shopContext = React.useContext(ShopContext);
+const TopNav: FC = () => {
+  const shopContext = useContext(ShopContext);
+  debugger;
 
   return (
     <nav className="navbar navbar-expand">

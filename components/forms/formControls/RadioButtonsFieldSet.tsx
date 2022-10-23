@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import { RadioButtonField } from "../model/InputSet";
 
-const RadioButton: React.FC<RadioButtonField | null> = (props) => {
+const RadioButton: FC<RadioButtonField> = (props) => {
   return (
     <div className="form-check">
       <input
@@ -9,8 +9,6 @@ const RadioButton: React.FC<RadioButtonField | null> = (props) => {
         name={props.name}
         type={props.type.toString()}
         className="form-check-input"
-        // checked={false}
-        // required={true}
       />
       <label className="form-check-label" htmlFor="credit">
         {props.label}
@@ -19,7 +17,9 @@ const RadioButton: React.FC<RadioButtonField | null> = (props) => {
   );
 };
 
-const RadioButtonsFieldSet = ({ buttons }) => {
+const RadioButtonsFieldSet: FC<{ buttons: RadioButtonField[] }> = ({
+  buttons,
+}) => {
   const radioButtons = buttons.map((button, index) => {
     return <RadioButton {...button} key={index} />;
   });

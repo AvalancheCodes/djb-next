@@ -1,5 +1,3 @@
-import { IShopContext } from "../context/shop/ShopContext";
-
 export enum EshopActionType {
   FETCH_PRODUCTS = "FETCH_PRODUCTS",
   ADD_TO_CART = "ADD_TO_CART",
@@ -12,7 +10,8 @@ export interface IShopAction {
   type: EshopActionType;
   payload: any;
 }
-const shopReducer = (state, action: IShopAction) => {
+
+const shopReducer = (state: any, action: IShopAction): any => {
   const { shopConfigValue } = state;
   switch (action.type) {
     case EshopActionType.TOGGLE_CART:
@@ -33,7 +32,7 @@ const shopReducer = (state, action: IShopAction) => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (item) => item.id !== action.payload.id
+          (item: any) => item.id !== action.payload.id
         ),
       };
     default:

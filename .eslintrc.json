@@ -1,3 +1,43 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": ["JSXElement *", "JSXElement", "ConditionalExpression"]
+      }
+    ],
+    "linebreak-style": ["warn", "unix"],
+    "no-multi-spaces": [
+      "error",
+      {
+        "exceptions": {
+          "AssignmentExpression": true,
+          "JSXAttribute": true
+        }
+      }
+    ],
+    "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "double"],
+    "react/jsx-indent-props": ["error", "first"],
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeSelfClosing": "always"
+      }
+    ],
+    "semi": ["error", "always"],
+    "unused-imports/no-unused-imports": "error"
+  }
 }

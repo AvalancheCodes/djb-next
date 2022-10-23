@@ -2,7 +2,10 @@ import fs from "fs";
 import path from "path";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default function handler(req, res) {
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+): void {
   const pathToConfig = path.join(
     process.cwd(),
     "public",

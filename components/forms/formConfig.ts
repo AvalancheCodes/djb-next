@@ -1,9 +1,16 @@
-import * as inputSet from "./model/InputSet";
+import {
+  CheckboxField,
+  EInputType,
+  InputSet,
+  RadioButtonField,
+  SelectSet,
+} from "./model/InputSet";
+
 const formConfig = {
-  firstName: new inputSet.InputSet(
+  firstName: new InputSet(
     "firstName",
     "First name",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -12,10 +19,10 @@ const formConfig = {
     "",
     "col-md-6 mb-3"
   ),
-  lastName: new inputSet.InputSet(
+  lastName: new InputSet(
     "lastName",
     "Last name",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -24,10 +31,10 @@ const formConfig = {
     "",
     "col-md-6 mb-3"
   ),
-  username: new inputSet.InputSet(
+  username: new InputSet(
     "username",
     "Username",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -36,10 +43,10 @@ const formConfig = {
     "@",
     "mb-3"
   ),
-  email: new inputSet.InputSet(
+  email: new InputSet(
     "email",
     "Email",
-    inputSet.EInputType.EMAIL,
+    EInputType.EMAIL,
     "form-control",
     "",
     "",
@@ -48,10 +55,10 @@ const formConfig = {
     "",
     "mb-3"
   ),
-  address: new inputSet.InputSet(
+  address: new InputSet(
     "address",
     "Address",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -60,10 +67,10 @@ const formConfig = {
     "",
     "mb-3"
   ),
-  address2: new inputSet.InputSet(
+  address2: new InputSet(
     "address2",
     "Address 2",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -72,10 +79,10 @@ const formConfig = {
     "",
     "mb-3"
   ),
-  country: new inputSet.SelectSet(
+  country: new SelectSet(
     "country",
     "Country",
-    inputSet.EInputType.SELECT,
+    EInputType.SELECT,
     "form-control",
     "",
     "",
@@ -89,10 +96,10 @@ const formConfig = {
       { value: "Mexico", label: "Mexico", selected: false },
     ]
   ),
-  state: new inputSet.SelectSet(
+  state: new SelectSet(
     "state",
     "State",
-    inputSet.EInputType.SELECT,
+    EInputType.SELECT,
     "form-control",
     "",
     "",
@@ -106,10 +113,10 @@ const formConfig = {
       { value: "Oregon", label: "Oregon", selected: false },
     ]
   ),
-  zip: new inputSet.InputSet(
+  zip: new InputSet(
     "zip",
     "Zip",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -119,10 +126,10 @@ const formConfig = {
     "mb-3"
   ),
   paymentMethods: [
-    new inputSet.RadioButtonField(
+    new RadioButtonField(
       "credit",
       "Credit card",
-      inputSet.EInputType.RADIO,
+      EInputType.RADIO,
       "custom-control-input",
       "",
       "",
@@ -132,10 +139,10 @@ const formConfig = {
       [],
       "paymentMethod"
     ),
-    new inputSet.RadioButtonField(
+    new RadioButtonField(
       "debit",
       "Debit card",
-      inputSet.EInputType.RADIO,
+      EInputType.RADIO,
       "custom-control-input",
       "",
       "",
@@ -145,10 +152,10 @@ const formConfig = {
       [],
       "paymentMethod"
     ),
-    new inputSet.RadioButtonField(
+    new RadioButtonField(
       "paypal",
       "PayPal",
-      inputSet.EInputType.RADIO,
+      EInputType.RADIO,
       "custom-control-input",
       "",
       "",
@@ -159,10 +166,10 @@ const formConfig = {
       "paymentMethod"
     ),
   ],
-  nameOnCard: new inputSet.InputSet(
+  nameOnCard: new InputSet(
     "cc-name",
     "Name on card",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -171,10 +178,10 @@ const formConfig = {
     "",
     "col-md-6 mb-3"
   ),
-  creditCardNumber: new inputSet.InputSet(
+  creditCardNumber: new InputSet(
     "cc-number",
     "Credit card number",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -183,10 +190,10 @@ const formConfig = {
     "",
     "col-md-6 mb-3"
   ),
-  expiration: new inputSet.InputSet(
+  expiration: new InputSet(
     "cc-expiration",
     "Expiration",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -195,10 +202,10 @@ const formConfig = {
     "",
     "col-md-3 mb-3"
   ),
-  cvv: new inputSet.InputSet(
+  cvv: new InputSet(
     "cc-cvv",
     "CVV",
-    inputSet.EInputType.TEXT,
+    EInputType.TEXT,
     "form-control",
     "",
     "",
@@ -208,10 +215,10 @@ const formConfig = {
     "col-md-3 mb-3"
   ),
   checkOptionSet: [
-    new inputSet.CheckboxField(
+    new CheckboxField(
       "same-address",
       "Shipping address is the same as my billing address",
-      inputSet.EInputType.CHECKBOX,
+      EInputType.CHECKBOX,
       "form-check-input",
       "",
       "",
@@ -219,10 +226,10 @@ const formConfig = {
       "",
       "custom-control custom-checkbox"
     ),
-    new inputSet.CheckboxField(
+    new CheckboxField(
       "save-info",
       "Save this information for next time",
-      inputSet.EInputType.CHECKBOX,
+      EInputType.CHECKBOX,
       "form-check-input",
       "",
       "",

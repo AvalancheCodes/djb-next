@@ -1,7 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import { SelectSet } from "../model/InputSet";
 
-const SelectFieldSet: React.FC<SelectSet | null> = ({ ...props }) => {
+const SelectFieldSet: FC<SelectSet> = ({ ...props }) => {
   return (
     <div className="col-md-4 mb-3">
       <label htmlFor="state" className="form-label">
