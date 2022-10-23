@@ -1,10 +1,10 @@
-import React from "react";
+import { FC } from "react";
 
-const ContactMap = () => {
+const ContactMap: FC = () => {
   return (
-        <div>
-            <h1>Hello map</h1>
-        </div>
+    <div>
+      <h1>Hello map</h1>
+    </div>
   );
 };
 

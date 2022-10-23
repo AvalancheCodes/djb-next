@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
 import WebApp from "../model/WebApp";
+import { createContext } from "react";
 
-const AppContext = React.createContext<WebApp | null>(null);
+const AppContext = createContext<WebApp>(null!);
 
 export default AppContext;

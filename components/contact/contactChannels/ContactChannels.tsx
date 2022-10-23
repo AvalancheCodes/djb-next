@@ -1,10 +1,10 @@
-import React from "react";
 import { contactChannelsData } from "./contactChannelsData";
 import ContactChannelInfo from "./ContactChannelInfo";
+import { FC } from "react";
 
 const channels = contactChannelsData;
 
-const ContactChannels = () => {
+const ContactChannels: FC = () => {
   const items = channels.map((channel, index) => (
     <ContactChannelInfo
       key={index}

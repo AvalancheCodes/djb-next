@@ -1,20 +1,22 @@
-import React from "react";
+import { FC, useEffect } from "react";
 import Offcanvas from "./Offcanvas";
 import TopNav from "./TopNav";
 
-const Header = () => {
+const Header: FC = () => {
   // Close offcanvas when clicking outside of it or when pressing
   // the nav-link button in the Header component
-  React.useEffect(() => {
+  useEffect(() => {
     const offcanvasOpener = document.querySelector(
-      "[data-bs-toggle=\"offcanvas\"]"
+      "[data-bs-toggle='offcanvas']"
     );
     const offcanvasCloser = document.querySelector(
-      "[data-bs-dismiss=\"offcanvas\"]"
+      "[data-bs-dismiss='offcanvas']"
     );
     const offcanvas = document.querySelector("#offcanvasEnd");
     const navLinks = document.querySelectorAll(".nav-link");
     console.log(navLinks);
+    if (!offcanvas || !offcanvasOpener || !offcanvasCloser)
+      throw new Error("Something is undefined!");
 
     //add event listener to each nav-link
     navLinks.forEach((link) => {

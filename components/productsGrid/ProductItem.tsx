@@ -1,8 +1,8 @@
-import React from "react";
 import ProductInfo from "../../model/directory/ProductInfo";
 import Link from "next/link";
+import { FC } from "react";
 
-const ProductItem: React.FC<ProductInfo | null> = (props) => {
+const ProductItem: FC<ProductInfo> = (props) => {
   const {
     title,
     description,
@@ -19,14 +19,16 @@ const ProductItem: React.FC<ProductInfo | null> = (props) => {
         <div className="position-relative">
           <img className="card-img-top rounded" src={image} alt={imageAlt} />
           <div className="position-absolute top-50 start-50 translate-middle card-element-hover p-0">
-            <Link href={link}>
-              <a
-                href="portfolio-detail-1.html"
-                className="btn btn-white btn-sm btn-line"
-              >
-                {linkText}
-              </a>
-            </Link>
+            {link && (
+              <Link href={link}>
+                <a
+                  href="portfolio-detail-1.html"
+                  className="btn btn-white btn-sm btn-line"
+                >
+                  {linkText}
+                </a>
+              </Link>
+            )}
           </div>
         </div>
         <div className="card-body px-0 mt-n5 position-relative zindex-9">
@@ -38,9 +40,11 @@ const ProductItem: React.FC<ProductInfo | null> = (props) => {
             ${price}
           </span>
           <h5 className="card-title">
-            <Link href={link}>
-              <a>{title}</a>
-            </Link>
+            {link && (
+              <Link href={link}>
+                <a>{title}</a>
+              </Link>
+            )}
           </h5>
           <p className="small">{description}</p>
         </div>

@@ -1,7 +1,15 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals", "plugin:react-hooks/recommended"],
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["@typescript-eslint", "unused-imports"],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
     "indent": [
       "error",
       2,
@@ -29,6 +37,7 @@
         "beforeSelfClosing": "always"
       }
     ],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "unused-imports/no-unused-imports": "error"
   }
 }

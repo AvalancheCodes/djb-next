@@ -1,13 +1,18 @@
-import React from "react";
 import Header from "../components/header/Header";
-import Preloader from "../components/preloader";
 import Footer from "../components/footer/footer";
+import { FC, ReactNode, useEffect } from "react";
 
-const PublicLayout = ({ children }) => {
+interface IProps {
+  children?: ReactNode;
+}
+
+const PublicLayout: FC<IProps> = ({ children }) => {
   // Set the margin of <main> to the height of the footer
-  React.useEffect(() => {
+  useEffect(() => {
     const main = document.querySelector("main");
     const footer = document.querySelector("footer");
+    if (!main || !footer) throw new Error("main or footer are missing!");
+
     main.style.marginBottom = footer.offsetHeight + "px";
   }, []);
 

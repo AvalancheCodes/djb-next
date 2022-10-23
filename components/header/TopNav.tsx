@@ -1,6 +1,5 @@
-import React from "react";
+import { FC, useContext } from "react";
 import Link from "next/link";
-// import CartIcon from "../shop/CartIcon";
 import dynamic from "next/dynamic";
 import ShopContext from "../../context/shop/ShopContext";
 
@@ -8,8 +7,8 @@ const CartIcon = dynamic(() => import("../shop/CartIcon"), {
   ssr: false,
 } as any);
 
-const TopNav = (props) => {
-  const shopContext = React.useContext(ShopContext);
+const TopNav: FC = () => {
+  const shopContext = useContext(ShopContext);
   debugger;
 
   return (
@@ -32,7 +31,7 @@ const TopNav = (props) => {
         <div className="navbar-nav flex-row align-items-center">
           <div className="nav-item">
             <CartIcon
-              iconContent={shopContext.shopConfigValue.cartItemsCount()}
+              iconContent={shopContext.shopConfigValue!.cartItemsCount()}
               dataProductId={0}
               iconClickHandler={shopContext.viewCartClickHandler}
             />

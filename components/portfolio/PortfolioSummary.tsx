@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { FC, useContext } from "react";
 import dynamic from "next/dynamic";
 import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
 import SummaryItem from "./SummaryItem";
@@ -42,14 +42,16 @@ const CartIconDynamic = dynamic(() => import("../shop/CartIcon"), {
   ssr: false,
 } as any);
 
-const PortfolioSummary = () => {
-  const shopContext = React.useContext(ShopContext);
+const PortfolioSummary: FC = () => {
+  const shopContext = useContext(ShopContext);
   const items = PortfolioSummaryData.map((item, index) => {
     return (
       <SummaryItem
         key={index}
         title={item.title}
-        text={item.text}
+        // TODO: Property 'text' does not exist on type .....
+        // text={item.text}
+        text={""}
         mainImage={item.mainImage}
         secondaryImage={item.secondaryImage}
         link={item.link}

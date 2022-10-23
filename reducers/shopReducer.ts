@@ -10,7 +10,8 @@ export interface IShopAction {
   type: EshopActionType;
   payload: any;
 }
-const shopReducer = (state, action: IShopAction) => {
+
+const shopReducer = (state: any, action: IShopAction): any => {
   switch (action.type) {
     case EshopActionType.TOGGLE_CART:
       return {
@@ -29,7 +30,7 @@ const shopReducer = (state, action: IShopAction) => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (item) => item.id !== action.payload.id
+          (item: any) => item.id !== action.payload.id
         ),
       };
     default:

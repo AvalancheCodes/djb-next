@@ -1,11 +1,7 @@
-import React from "react";
+import { FC } from "react";
 
-const ProjectDetails = () => {
-  return (
-        <div>
-
-        </div>
-  );
+const ProjectDetails: FC = () => {
+  return <div></div>;
 };
 
 export default ProjectDetails;

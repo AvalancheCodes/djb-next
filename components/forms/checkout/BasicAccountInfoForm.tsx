@@ -1,9 +1,9 @@
-import React from "react";
 import formConfig from "../formConfig";
 import InputFieldSet from "../formControls/InputFieldSet";
 import SelectFieldSet from "../formControls/SelectFieldSet";
+import { FC } from "react";
 
-const BasicAccountInfoForm = () => {
+const BasicAccountInfoForm: FC = () => {
   return (
     <>
       <div className="row">

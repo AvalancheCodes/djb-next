@@ -1,11 +1,7 @@
-import React from "react";
+import { FC } from "react";
 import { InputSet } from "../model/InputSet";
 
-interface IFieldSetProps {
-  inputSet: InputSet;
-}
-
-const InputFieldSet: React.FC<InputSet | null> = (props) => {
+const InputFieldSet: FC<InputSet> = (props) => {
   return (
     <div className={props.fieldContainerClassName}>
       <label htmlFor="firstName">{props.label}</label>

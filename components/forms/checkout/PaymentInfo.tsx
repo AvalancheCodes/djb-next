@@ -1,8 +1,16 @@
-import React from "react";
 import RadioButtonsFieldSet from "../formControls/RadioButtonsFieldSet";
 import InputFieldSet from "../formControls/InputFieldSet";
+import { FC } from "react";
 
-const PaymentInfo = ({
+interface IProps {
+  paymentMethods: any;
+  nameOnCard: any;
+  creditCardNumber: any;
+  expiration: any;
+  cvv: any;
+}
+
+const PaymentInfo: FC<IProps> = ({
   paymentMethods,
   nameOnCard,
   creditCardNumber,

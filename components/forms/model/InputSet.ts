@@ -25,17 +25,18 @@ export class InputSet {
   prepend?: string;
   fieldContainerClassName?: string;
   underFieldText?: string;
+
   constructor(
-    id,
-    label,
-    type,
-    className,
-    value = "",
-    placeholder = "",
-    required,
-    validationErr,
-    prepend = "",
-    fieldContainerClassName = ""
+    id: string,
+    label: string | undefined,
+    type: EInputType,
+    className: string | undefined,
+    value: string = "",
+    placeholder: string = "",
+    required: boolean,
+    validationErr: string | undefined,
+    prepend: string | undefined = "",
+    fieldContainerClassName: string | undefined = ""
   ) {
     this.id = id;
     this.label = label;
@@ -58,15 +59,16 @@ interface IOption {
 
 export class SelectSet extends InputSet {
   options: Array<IOption>;
+
   constructor(
-    id,
-    label,
-    type,
-    className,
+    id: string,
+    label: string | undefined,
+    type: EInputType,
+    className: string | undefined,
     value = "",
     placeholder = "",
-    required,
-    validationErr,
+    required: boolean,
+    validationErr: string | undefined,
     fieldContainerClassName = "",
     options = Array<IOption>()
   ) {
@@ -88,18 +90,19 @@ export class SelectSet extends InputSet {
 
 export class RadioButtonField extends InputSet {
   options: Array<IOption>;
+
   constructor(
-    id,
-    label,
-    type,
-    className,
+    id: string,
+    label: string | undefined,
+    type: EInputType,
+    className: string | undefined,
     value = "",
     placeholder = "",
-    required,
-    validationErr,
+    required: boolean,
+    validationErr: string | undefined,
     fieldContainerClassName = "",
     options = [],
-    name
+    name: string | undefined
   ) {
     super(
       id,
@@ -120,14 +123,14 @@ export class RadioButtonField extends InputSet {
 
 export class CheckboxField extends InputSet {
   constructor(
-    id,
-    label,
-    type,
-    className,
+    id: string,
+    label: string | undefined,
+    type: EInputType,
+    className: string | undefined,
     value = "",
     placeholder = "",
-    required,
-    validationErr,
+    required: boolean,
+    validationErr: string | undefined,
     fieldContainerClassName = ""
   ) {
     super(
