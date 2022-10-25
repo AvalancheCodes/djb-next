@@ -36,7 +36,7 @@ const CartItemElement: FC<ICartItemElementProps> = ({
           </div>
         </div>
       </div>
-      <div className="col-2"></div>
+      <div className="col-2 fs-4">${product.price}</div>
     </div>
   );
 };

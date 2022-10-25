@@ -53,7 +53,8 @@ const Modal: FC<IPropsModal> = ({
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="staticBackdropLabel">
-              Modal title
+              <i className="fa fa-shopping-cart me-2 text-secondary"></i>
+              {header}
             </h5>
             <button
               type="button"

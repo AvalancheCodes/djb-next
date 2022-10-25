@@ -19,7 +19,7 @@ const CartView: React.FC<ICartViewProps> = ({ cartItems }): JSX.Element => {
   return (
     <div className="container">
       {/*   Header Row */}
-      <div className="row">
+      <div className="row d-none">
         <div className="col-10">Product</div>
         <div className="col-2">Price</div>
       </div>
