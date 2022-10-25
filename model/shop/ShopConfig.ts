@@ -1,5 +1,6 @@
 import Product from "./Product";
 import { CartItem, ICartModal } from "./cart";
+import { IPropsModal } from "@/components/modal/Modal";
 
 class ShopConfig {
   initialProducts: Product[];
@@ -8,6 +9,7 @@ class ShopConfig {
   productsPerPageOptions: number[];
   cartItems: CartItem[];
   cartModal: ICartModal;
+  cartModalProps: IPropsModal;
   constructor() {
     this.initialProducts = [];
     this.products = [];
@@ -19,6 +21,14 @@ class ShopConfig {
       product: {} as Product,
       quantity: 0,
       type: "add",
+    };
+    this.cartModalProps = {
+      modalId: "shopping-cart-modal",
+      show: false,
+      header: "Shopping Cart",
+      footer: "Checkout",
+      children: null,
+      closeHandler: undefined,
     };
   }
 }

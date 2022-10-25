@@ -4,32 +4,7 @@ import PortfolioSummaryData from "../../public/config/portfolio-summary-data";
 import ImageHoverInfo from "../tinySlider/children/ImageHoverInfo";
 import CartIcon from "../shop/CartIcon";
 import ShopContext from "../../context/shop/ShopContext";
-import { EshopActionType, IShopAction } from "../../reducers/shopReducer";
-import { CartItem } from "../../model/shop/cart";
-
-const options = {
-  items: 1,
-  autoplay: true,
-  autoplayButtonOutput: false,
-  controls: false,
-  nav: true,
-  responsive: {
-    576: {
-      items: 2,
-      edgePadding: 20,
-      gutter: 20,
-    },
-    768: {
-      items: 3,
-    },
-    992: {
-      items: 4,
-    },
-    1200: {
-      items: 5,
-    },
-  },
-};
+import options from "./options";
 
 // import TinySliderComponent dynamically
 const TinySliderComponent = dynamic(
@@ -39,25 +14,12 @@ const TinySliderComponent = dynamic(
   }
 );
 
-const PortfolioSummary = (): any => {
+const DynamicModal = dynamic(() => import("../modal/Modal"), {
+  ssr: false,
+} as any);
+
+const PortfolioSummary = (): JSX.Element => {
   const shopContext = React.useContext(ShopContext);
-
-  // Handle Add to Cart click
-  const onAddToCartClickHandler = (event: any): void => {
-    const id = event.target.getAttribute("data-product-id");
-    const shopConfig = shopContext.shopConfigStateValue;
-    const product = shopConfig.products.find((p) => p.id === Number(id));
-    debugger;
-    if (!product) throw new Error(`Product not found for id ${id}`);
-    console.log("shopProvider::", shopConfig);
-
-    const action: IShopAction = {
-      type: EshopActionType.ADD_TO_CART,
-      payload: new CartItem(product, 1),
-    };
-    shopContext.shopDispatch(action);
-  };
-
   const imageHoverItems = PortfolioSummaryData.map((item, index) => {
     return (
       <ImageHoverInfo
@@ -74,7 +36,7 @@ const PortfolioSummary = (): any => {
           <CartIcon
             iconContent={"+"}
             dataProductId={item.id}
-            iconClickHandler={onAddToCartClickHandler}
+            iconClickHandler={shopContext.addToCartClickHandler}
           />
         }
       </ImageHoverInfo>
@@ -107,6 +69,14 @@ const PortfolioSummary = (): any => {
           </TinySliderComponent>
         </div>
       </div>
+      <DynamicModal
+        modalId={"testModal"}
+        footer={"footer"}
+        header={"shopping cart"}
+        show={false}
+      >
+        <h1>this is the body</h1>
+      </DynamicModal>
     </div>
   );
 };

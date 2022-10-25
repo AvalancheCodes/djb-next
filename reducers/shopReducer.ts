@@ -5,17 +5,16 @@ export enum EshopActionType {
   ADD_TO_CART = "ADD_TO_CART",
   REMOVE_FROM_CART = "REMOVE_FROM_CART",
   UPDATE_CART_QUANTITY = "UPDATE_CART_QUANTITY",
+  UPDATE_CART_PROPS = "UPDATE_CART_PROPS",
   TOGGLE_CART = "TOGGLE_CART",
-  SET_REDUCER = "SET_REDUCER",
 }
 
 export interface IShopAction {
   type: EshopActionType;
-  payload: any;
+  payload?: any;
 }
 
 const shopReducer = (state: ShopConfig, action: IShopAction): ShopConfig => {
-  debugger;
   switch (action.type) {
     case EshopActionType.TOGGLE_CART:
       return {
@@ -29,6 +28,11 @@ const shopReducer = (state: ShopConfig, action: IShopAction): ShopConfig => {
       return {
         ...state,
         cartItems: [...state.cartItems, action.payload],
+      };
+    case EshopActionType.UPDATE_CART_PROPS:
+      return {
+        ...state,
+        cartModalProps: { ...state.cartModalProps, ...action.payload },
       };
     case EshopActionType.REMOVE_FROM_CART:
       return {
