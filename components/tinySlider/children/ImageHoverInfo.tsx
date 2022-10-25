@@ -27,6 +27,7 @@ const ImageHoverInfo: FC<IProps> = ({ children, ...props }) => {
       <div className="action-container">{children}</div>
       <div className="card card-metro">
         <div className="card-image grayscale">
+          {/*<Image src={image} alt={imageAlt} />*/}
           <img src={image} alt={imageAlt} />
         </div>
         <div className="card-img-overlay"></div>
