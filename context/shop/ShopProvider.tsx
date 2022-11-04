@@ -62,7 +62,6 @@ const ShopProvider: FC<IProps> = ({ children }) => {
   };
 
   useEffect(() => {
-    debugger;
     // @ts-ignore
     setModalProps({
       ...modalProps,

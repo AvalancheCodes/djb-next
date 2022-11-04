@@ -7,7 +7,6 @@ export interface ICartViewProps {
 }
 
 const CartView: React.FC<ICartViewProps> = ({ cartItems }): JSX.Element => {
-  debugger;
   if (cartItems.length === 0) {
     return <div>Cart is empty</div>;
   }
