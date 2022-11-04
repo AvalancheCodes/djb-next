@@ -1,19 +1,34 @@
 import Header from "../components/header/Header";
 import Footer from "../components/footer/footer";
-import React, { FC, ReactNode, useEffect } from "react";
+import React, { FC, ReactNode, useContext, useEffect } from "react";
 import dynamic from "next/dynamic";
 import ShopContext from "@/context/shop/ShopContext";
 import CartView from "@/components/shop/CartView";
+import Dynamic from "next/dynamic";
+import MenuRoutes from "@/components/header/MenuRoutes";
+import AppContext from "@/context/AppContext";
+import { offcanvasRoutes } from "../public/config/routes";
+import MenuRoute from "../model/Navigation/MenuRoute";
 
 const DynamicModal = dynamic(() => import("../components/modal/Modal"), {
   ssr: false,
 } as any);
+
+const DynOffCanvas = Dynamic(() => import("@/components/offcanvas/OffCanvas"), {
+  ssr: false,
+});
+
+const menuRoutes = offcanvasRoutes.map(
+  (route) =>
+    new MenuRoute(route.name, route.friendlyName, route.title, route.path)
+);
 
 interface IProps {
   children?: ReactNode;
 }
 
 const PublicLayout: FC<IProps> = ({ children }) => {
+  const appContext = useContext(AppContext);
   const shopContext = React.useContext(ShopContext);
   const { $setModalProps, $modalProps } = shopContext;
 
@@ -32,6 +47,24 @@ const PublicLayout: FC<IProps> = ({ children }) => {
         {/*{shopContext.$modalProps.children}*/}
         <CartView cartItems={shopContext.$shopConfig.cartItems} />
       </DynamicModal>
+      <DynOffCanvas
+        show={appContext?.showOffCanvas}
+        closeHandler={appContext?.toggleOffcanvas}
+        setShowBackdrop={appContext?.setShowBackdrop}
+      >
+        {<MenuRoutes routes={menuRoutes} />}
+      </DynOffCanvas>
+      {appContext?.showBackdrop && (
+        <div
+          className="modal-backdrop fade show"
+          data-bs-dismiss="offcanvas"
+          // onClick={(event) => {
+          //   appContext?.toggleOffcanvas();
+          //   appContext?.setShowBackdrop(false);
+          //   console.log(event.target);
+          // }}
+        />
+      )}
     </>
   );
 };

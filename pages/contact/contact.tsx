@@ -3,7 +3,7 @@ import ContactForm from "../../components/contact/ContactForm";
 import AppContext from "../../context/AppContext";
 import { IGeoLocation } from "../../model/ILocation";
 import ContactChannels from "../../components/contact/contactChannels/ContactChannels";
-import { FC, useContext } from "react";
+import { FC } from "react";
 
 const DynamicGoogleMap = dynamic(
   () => import("../../components/googleMap/GoogleIframeMap"),
@@ -11,8 +11,6 @@ const DynamicGoogleMap = dynamic(
 );
 
 const Contact: FC = () => {
-  const appContext = useContext(AppContext);
-
   // todo: how to correct the appContext not initialized on time
   // const appConfig = appContext.configData;
   // const geo = appConfig.locations[0].geoLocation;

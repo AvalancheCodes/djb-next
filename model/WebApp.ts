@@ -7,6 +7,8 @@ class WebApp {
   updatedDate!: Date;
   initiated!: boolean;
   configData!: IAppConfig;
+  // Offcanvas
+  offCanvasShow: boolean = false;
 
   constructor(domain: string) {
     this.domain = domain;
@@ -24,6 +26,11 @@ class WebApp {
   //       this.createdDate = new Date();
   //     });
   // }
+
+  toggleOffCanvas(): void {
+    debugger;
+    this.offCanvasShow = !this.offCanvasShow;
+  }
 }
 
 export default WebApp;

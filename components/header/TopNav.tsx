@@ -3,6 +3,7 @@ import Link from "next/link";
 // import CartIcon from "../shop/CartIcon";
 import dynamic from "next/dynamic";
 import ShopContext from "../../context/shop/ShopContext";
+import AppContext from "@/context/AppContext";
 
 const CartIcon = dynamic(() => import("../shop/CartIcon"), {
   ssr: false,
@@ -10,6 +11,7 @@ const CartIcon = dynamic(() => import("../shop/CartIcon"), {
 
 const TopNav: FC = () => {
   const shopContext = useContext(ShopContext);
+  const appContext = useContext(AppContext);
 
   return (
     <>
@@ -39,8 +41,9 @@ const TopNav: FC = () => {
             </div>
             <div className="nav-item ms-1">
               <a
+                onClick={appContext?.toggleOffcanvas}
                 className="nav-link p-0 flex-row"
-                data-bs-toggle="offcanvas"
+                // data-bs-toggle="offcanvas"
                 // href="#offcanvasEnd" todo: check if this is needed?
                 role="button"
                 aria-controls="offcanvasEnd"
@@ -53,7 +56,8 @@ const TopNav: FC = () => {
                 </span>
                 <i
                   className="bi bi-text-right rtl-flip display-8 align-middle"
-                  data-bs-target="#offcanvasEnd"
+                  onMouseOver={appContext?.toggleOffcanvas}
+                  // data-bs-target="#offcanvasEnd"
                 ></i>
               </a>
             </div>

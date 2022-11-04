@@ -1,6 +1,14 @@
-import WebApp from "../model/WebApp";
 import { createContext } from "react";
 
-const AppContext = createContext<WebApp>(null!);
+export interface IAppContext {
+  name: string;
+  domain: string;
+  showOffCanvas: boolean;
+  toggleOffcanvas: () => void;
+  showBackdrop: boolean;
+  setShowBackdrop: (show: boolean) => void;
+}
+
+const AppContext = createContext<IAppContext | null>(null!);
 
 export default AppContext;

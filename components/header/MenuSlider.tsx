@@ -2,7 +2,7 @@ import Link from "next/link";
 import { offcanvasRoutes } from "../../public/config/routes";
 import { FC } from "react";
 
-const Offcanvas: FC = () => {
+const MenuSlider: FC = () => {
   return (
     <div
       className="offcanvas offcanvas-end bg-dark"
@@ -34,13 +34,13 @@ const Offcanvas: FC = () => {
         </ul>
         <div className="mt-auto mb-5">
           <a
-            href="components/header/offcanvas#Offcanvas.tsx"
+            href="components/header/MenuSlider#Offcanvas.tsx"
             className="font-heading text-white text-primary-hover d-block mb-3"
           >
             hello@DavidBarel.com
           </a>
           <a
-            href="components/header/offcanvas#Offcanvas.tsx"
+            href="components/header/MenuSlider#Offcanvas.tsx"
             className="font-heading text-white text-primary-hover"
           >
             +(800)300-8690
@@ -51,4 +51,4 @@ const Offcanvas: FC = () => {
   );
 };
 
-export default Offcanvas;
+export default MenuSlider;
