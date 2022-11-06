@@ -9,12 +9,13 @@
 @import "user-variables";
 
 // Bootstrap core
-@import "../vendor/bootstrap/scss/bootstrap";
+//@import "../vendor/bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 // Extended bootstrap utilities
+@import "bootstrap/scss/utilities";
 @import "custom/utilities";
-@import "../vendor/bootstrap/scss/utilities/api";
-
+@import "bootstrap/scss/utilities/api";
 
 @tailwind base;
 @tailwind components;
@@ -37,7 +38,7 @@
 @import "custom/type";
 @import "custom/offcanvas";
 
-// Theme components 
+// Theme components
 @import "components/general";
 //
 @import "components/avatar";
