@@ -130,3 +130,10 @@ $positions: ($left, $right, $top, $bottom);
 
   z-index: 1000;
 }
+
+// Correcting the differences between Bootstrap 5.0.0 and 5.2.2
+.display-6 {
+  font-size: calc(2.12rem + 1.44vw);
+  font-weight: 700;
+  line-height: 1.4;
+}
