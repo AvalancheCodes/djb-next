@@ -21,35 +21,25 @@ const Offcanvas: FC<IPropsOffcanvas> = ({
   const offcanvasRef = React.useRef<HTMLDivElement>(null);
   useEffect(() => {
     const options = {
-      backdrop: false,
-      keyboard: true,
-      scroll: true,
+      backdrop: true,
+      keyboard: false,
+      scroll: false,
     };
     const offcanvas = new BootstrapOffcanvas(
-      offcanvasRef.current as HTMLDivElement,
-      options
+      offcanvasRef.current as HTMLDivElement
     );
     // @ts-ignore
-    offcanvas._config["backdrop"] = true;
+    // offcanvas._config["backdrop"] = true;
     debugger;
     setOffcanvas(offcanvas);
     // Toggle offcanvas state
+    // Todo: why is backdrop not showing?
     show ? offcanvas.show() : offcanvas.hide();
-    // if (offcanvasRef.current && show) {
-    //   offcanvasRef.current.addEventListener("shown.bs.offcanvas", () => {
-    //     console.log("shown.bs.offcanvas");
-    //     setShowBackdrop(true);
-    //   });
-    //   offcanvasRef.current.addEventListener("hidden.bs.offcanvas", () => {
-    //     console.log("hidden.bs.offcanvas");
-    //     setShowBackdrop(false);
-    //   });
-    // }
   }, [show]);
   return (
     <div
       ref={offcanvasRef}
-      data-bs-backdrop="true"
+      data-bs-keyboard="false"
       className="offcanvas offcanvas-end bg-dark"
       tabIndex={-1}
       id="offcanvasEnd"

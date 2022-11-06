@@ -1,6 +1,5 @@
 import React, { FC, useContext } from "react";
 import Link from "next/link";
-// import CartIcon from "../shop/CartIcon";
 import dynamic from "next/dynamic";
 import ShopContext from "../../context/shop/ShopContext";
 import AppContext from "@/context/AppContext";
@@ -19,10 +18,7 @@ const TopNav: FC = () => {
         <div className="container">
           <Link href="/">
             <a className="navbar-brand ">
-              {/*<img className="navbar-brand-item"*/}
-              {/*     src="assets/images/logo.png" alt="Logo" />*/}
-              <h3 className="me-2 mb-0 my-2">
-                {/*<span className="badge bg-primary mx-2"></span>*/}
+              <h3 className="me-2 mb-0">
                 David J<span className="text-primary">.</span> Barel
               </h3>
               <h6 className="smaller text-muted mb-0 d-none">
@@ -30,8 +26,7 @@ const TopNav: FC = () => {
               </h6>
             </a>
           </Link>
-
-          <div className="navbar-nav flex-row align-items-center">
+          <div className="navbar-nav flex-row align-items-center p-2">
             <div className="nav-item">
               <CartIcon
                 iconContent={shopContext.$shopConfig.cartItems.length}
@@ -44,12 +39,12 @@ const TopNav: FC = () => {
                 onClick={appContext?.toggleOffcanvas}
                 className="nav-link p-0 flex-row"
                 // data-bs-toggle="offcanvas"
-                // href="#offcanvasEnd" todo: check if this is needed?
+                // href="#offcanvasEnd"
                 role="button"
                 aria-controls="offcanvasEnd"
               >
                 <span
-                  className="font-heading fw-bold me-2"
+                  className="font-heading fw-bold me-2 d-none d-md-block"
                   data-bs-target="#offcanvasEnd"
                 >
                   Menu

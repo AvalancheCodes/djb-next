@@ -54,17 +54,17 @@ const PublicLayout: FC<IProps> = ({ children }) => {
       >
         {<MenuRoutes routes={menuRoutes} />}
       </DynOffCanvas>
-      {appContext?.showBackdrop && (
-        <div
-          className="modal-backdrop fade show"
-          data-bs-dismiss="offcanvas"
-          // onClick={(event) => {
-          //   appContext?.toggleOffcanvas();
-          //   appContext?.setShowBackdrop(false);
-          //   console.log(event.target);
-          // }}
-        />
-      )}
+      {/*{appContext?.showBackdrop && (*/}
+      {/*  <div*/}
+      {/*    className="modal-backdrop fade show"*/}
+      {/*    data-bs-dismiss="offcanvas"*/}
+      {/*    // onClick={(event) => {*/}
+      {/*    //   appContext?.toggleOffcanvas();*/}
+      {/*    //   appContext?.setShowBackdrop(false);*/}
+      {/*    //   console.log(event.target);*/}
+      {/*    // }}*/}
+      {/*  />*/}
+      {/*)}*/}
     </>
   );
 };

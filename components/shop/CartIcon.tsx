@@ -22,7 +22,7 @@ const CartIcon: FC<IProps> = ({
 
   return (
     <button
-      className="btn btn-cart-icon p-0"
+      className="btn btn-cart-icon p-0 pt-2"
       onClick={iconClickHandler}
       ref={iconRef}
     >
