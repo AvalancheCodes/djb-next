@@ -51,7 +51,7 @@ const TopNav: FC = () => {
                 </span>
                 <i
                   className="bi bi-text-right rtl-flip display-8 align-middle"
-                  onMouseOver={appContext?.toggleOffcanvas}
+                  // onMouseOver={appContext?.toggleOffcanvas}
                   // data-bs-target="#offcanvasEnd"
                 ></i>
               </a>

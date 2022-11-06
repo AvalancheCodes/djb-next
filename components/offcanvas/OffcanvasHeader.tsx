@@ -8,7 +8,7 @@ const OffcanvasHeader: React.FC<IProps> = ({ closeHandler }) => {
   return (
     <div className="offcanvas-header">
       <a
-        className="ms-auto btn btn-primary btn-round zgit oom-hover"
+        className="ms-auto btn btn-primary btn-round zoom-hover"
         onClick={closeHandler}
         data-bs-dismiss="offcanvas"
         aria-label="Close"
