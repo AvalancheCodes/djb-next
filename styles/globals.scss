@@ -137,3 +137,8 @@ $positions: ($left, $right, $top, $bottom);
   font-weight: 700;
   line-height: 1.4;
 }
+
+// Fix Tiny Slider auto margin to slide
+#tns1-iw {
+  margin: 0px !important;
+}

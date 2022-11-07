@@ -41,6 +41,7 @@ const PublicLayout: FC<IProps> = ({ children }) => {
   return (
     <>
       <Header />
+      <div id="sticky-space"></div>
       <main>{children}</main>
       <Footer />
       <DynamicModal {...$modalProps}>

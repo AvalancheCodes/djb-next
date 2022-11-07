@@ -5,6 +5,7 @@ import PortfolioSummary from "../components/portfolio/PortfolioSummary";
 import FeaturesBanner from "../components/features/features-banner";
 import LogoBanner from "../components/logos/technology-banner";
 import { FC } from "react";
+import ReviewHero from "@/components/hero/review-hero/ReviewHero";
 
 const Home: FC = () => {
   return (
@@ -15,19 +16,8 @@ const Home: FC = () => {
         content="David J. Barel is a top rated full stack developer"
       />
       <link rel="icon" href="/favicon.ico" />
-      {/*<script type="text/javascript" src="/test.js" />*/}
-      {/*<Script*/}
-      {/*  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"*/}
-      {/*  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"*/}
-      {/*  crossOrigin="anonymous"*/}
-      {/*  type={"module"}*/}
-      {/*></Script>*/}
-      {/*<Script type={"text/javascript"} src={"vendor/tiny-slider/tiny-slider.js"}></Script>*/}
-      {/*<Script type={"text/javascript"} src={"vendor/js/theme.js"}></Script>*/}
-
-      <section className="pt-4">
-        <Illustrated />
-      </section>
+      <ReviewHero />
+      <section className="pt-4 d-none">{/*<Illustrated />*/}</section>
       {/* END HEAD */}
 
       {/*  Services  */}

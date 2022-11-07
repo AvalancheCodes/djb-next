@@ -6,6 +6,8 @@ interface IProps {
   options: any;
   children: ReactNode;
   classNames: string;
+  // Class names for the inner slider
+  innerClassNames?: string;
 }
 
 const NextTinySlider: FC<IProps> = ({ options, children, classNames }) => {
@@ -32,7 +34,7 @@ const NextTinySlider: FC<IProps> = ({ options, children, classNames }) => {
       ref={containerRef}
       className="tiny-slider arrow-md-none arrow-bordered arrow-large arrow-round"
     >
-      <div className="tiny-slider-inner" ref={innerRef}>
+      <div className="tiny-slider-inner h-500 h-sm-700 h-xl-900" ref={innerRef}>
         {children}
       </div>
     </div>

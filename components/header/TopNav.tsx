@@ -17,7 +17,7 @@ const TopNav: FC = () => {
       <nav className="navbar navbar-expand">
         <div className="container">
           <Link href="/">
-            <a className="navbar-brand ">
+            <a className="navbar-brand">
               <h3 className="me-2 mb-0">
                 David J<span className="text-primary">.</span> Barel
               </h3>
@@ -38,8 +38,6 @@ const TopNav: FC = () => {
               <a
                 onClick={appContext?.toggleOffcanvas}
                 className="nav-link p-0 flex-row"
-                // data-bs-toggle="offcanvas"
-                // href="#offcanvasEnd"
                 role="button"
                 aria-controls="offcanvasEnd"
               >
@@ -49,11 +47,7 @@ const TopNav: FC = () => {
                 >
                   Menu
                 </span>
-                <i
-                  className="bi bi-text-right rtl-flip display-8 align-middle"
-                  // onMouseOver={appContext?.toggleOffcanvas}
-                  // data-bs-target="#offcanvasEnd"
-                ></i>
+                <i className="bi bi-text-right rtl-flip display-8 align-middle"></i>
               </a>
             </div>
           </div>

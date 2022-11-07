@@ -12,7 +12,10 @@ const menuRoutes = offcanvasRoutes.map(
 const Header: FC = () => {
   return (
     <>
-      <header className="navbar-light header-static navbar-sticky">
+      <header
+        className="navbar-light header-static navbar-sticky
+                navbar-transparent d-none"
+      >
         <TopNav />
       </header>
     </>
