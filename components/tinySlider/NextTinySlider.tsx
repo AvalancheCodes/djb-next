@@ -8,9 +8,16 @@ interface IProps {
   classNames: string;
   // Class names for the inner slider
   innerClassNames?: string;
+  onIndexChanged?: (info: any) => void;
 }
 
-const NextTinySlider: FC<IProps> = ({ options, children, classNames }) => {
+const NextTinySlider: FC<IProps> = ({
+  options,
+  children,
+  classNames,
+  innerClassNames,
+  onIndexChanged,
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
 
@@ -20,6 +27,10 @@ const NextTinySlider: FC<IProps> = ({ options, children, classNames }) => {
         container: innerRef.current,
         ...options,
       } as any);
+
+      if (slider && onIndexChanged) {
+        slider.events.on("indexChanged", onIndexChanged);
+      }
 
       if (classNames) {
         classNames.split(" ").forEach((className) => {
@@ -34,7 +45,12 @@ const NextTinySlider: FC<IProps> = ({ options, children, classNames }) => {
       ref={containerRef}
       className="tiny-slider arrow-md-none arrow-bordered arrow-large arrow-round"
     >
-      <div className="tiny-slider-inner h-500 h-sm-700 h-xl-900" ref={innerRef}>
+      <div
+        className={`tiny-slider-inner ${
+          innerClassNames ? innerClassNames : "h-500 h-sm-700 h-xl-900"
+        }`}
+        ref={innerRef}
+      >
         {children}
       </div>
     </div>

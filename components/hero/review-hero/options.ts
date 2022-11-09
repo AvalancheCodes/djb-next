@@ -4,6 +4,8 @@ const options = {
   autoplayButtonOutput: false,
   controls: false,
   nav: true,
+  autoplayTimeout: 7000,
+  gutter: 0,
   responsive: {
     576: {
       items: 1,

@@ -12,12 +12,15 @@ const TinySliderComponent = dynamic(
   }
 );
 
-const renderReviewItems = (): JSX.Element[] =>
-  reviews.map((review, index) => {
-    return <ReviewItem key={index} {...review} />;
-  });
-
 const ReviewHero = (): ReactElement => {
+  const [tnsIndex, setTnsIndex] = React.useState(0);
+
+  const onIndexChanged = (info: any): void => {
+    debugger;
+    setTnsIndex(info.index);
+    console.log("Index:", info.displayIndex);
+  };
+
   return (
     <TinySliderComponent
       options={options}
@@ -25,8 +28,12 @@ const ReviewHero = (): ReactElement => {
         "dots-white dots-bordered dots-end arrow-bordered arrow-large " +
         "arrow-round arrow-start-bottom arrow-md-none"
       }
+      onIndexChanged={onIndexChanged}
+      innerClassNames="h-600 h-sm-700 h-xl-900"
     >
-      {renderReviewItems()}
+      {reviews.map((review, index) => {
+        return <ReviewItem key={index} {...review} sliderIndex={tnsIndex} />;
+      })}
     </TinySliderComponent>
   );
 };

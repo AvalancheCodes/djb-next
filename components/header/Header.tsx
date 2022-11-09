@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { offcanvasRoutes } from "../../public/config/routes";
-import TopNav from "./TopNav";
 
 import MenuRoute from "../../model/Navigation/MenuRoute";
+import TransparentTopNav from "@/components/header/top-nav/TransparentTopNav";
 
 const menuRoutes = offcanvasRoutes.map(
   (route) =>
@@ -12,11 +12,10 @@ const menuRoutes = offcanvasRoutes.map(
 const Header: FC = () => {
   return (
     <>
-      <header
-        className="navbar-light header-static navbar-sticky
-                navbar-transparent d-none"
-      >
-        <TopNav />
+      <header className="navbar-dark navbar-transparent navbar-sticky">
+        {/*<TopNav />*/}
+        <TransparentTopNav />
+        <div className="divider-light opacity-1"></div>
       </header>
     </>
   );

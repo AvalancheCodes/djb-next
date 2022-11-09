@@ -139,6 +139,32 @@ $positions: ($left, $right, $top, $bottom);
 }
 
 // Fix Tiny Slider auto margin to slide
+@media (min-width: 36em) {
+  #tns4-iw {
+    /* margin: 0px 0px 0px 20px; */
+    margin: 0px !important;
+  }
+}
 #tns1-iw {
   margin: 0px !important;
+}
+
+// Fix navbar issues
+.navbar {
+  .container {
+    max-width: 96% !important;
+  }
+}
+
+// tiny slider animation
+.tiny-slider .tns-slide-active {
+  .animate__fadeInUp {
+    animation-name: fadeInUp;
+  }
+  .animate__jackInTheBox {
+    animation-name: jackInTheBox;
+  }
+  .animate__bounceIn {
+    animation-name: bounceIn;
+  }
 }

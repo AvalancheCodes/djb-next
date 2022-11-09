@@ -1,5 +1,4 @@
 // import Script from "next/script";
-import Illustrated from "../components/hero/illustrated/illustrated";
 import Testimonials from "../components/testimonials/Testimonials";
 import PortfolioSummary from "../components/portfolio/PortfolioSummary";
 import FeaturesBanner from "../components/features/features-banner";
@@ -16,8 +15,11 @@ const Home: FC = () => {
         content="David J. Barel is a top rated full stack developer"
       />
       <link rel="icon" href="/favicon.ico" />
-      <ReviewHero />
-      <section className="pt-4 d-none">{/*<Illustrated />*/}</section>
+
+      <section className="position-relative bg-dark p-0 ">
+        {/*<Illustrated />*/}
+        <ReviewHero />
+      </section>
       {/* END HEAD */}
 
       {/*  Services  */}

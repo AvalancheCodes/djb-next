@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import ContactForm from "../../components/contact/ContactForm";
-import AppContext from "../../context/AppContext";
 import { IGeoLocation } from "../../model/ILocation";
 import ContactChannels from "../../components/contact/contactChannels/ContactChannels";
 import { FC } from "react";
