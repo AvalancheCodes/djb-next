@@ -10,7 +10,7 @@ const NavbarActions = (): ReactElement => {
     <div className="nav flex-nowrap align-items-center">
       <SearchOpener clickHandler={() => {}} />
       <GetQuote />
-      <MenuOpener clickHandler={() => {}} />
+      <MenuOpener clickHandler={appContext?.toggleOffCanvas} />
     </div>
   );
 };

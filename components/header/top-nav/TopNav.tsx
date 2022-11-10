@@ -27,7 +27,7 @@ const TopNav: FC = () => {
             </div>
             <div className="nav-item ms-1">
               <a
-                onClick={appContext?.toggleOffcanvas}
+                onClick={appContext?.toggleOffCanvas}
                 className="nav-link p-0 flex-row"
                 role="button"
                 aria-controls="offcanvasEnd"

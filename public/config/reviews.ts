@@ -10,7 +10,7 @@ const reviews = [
       "very complex project, with over 100,000 lines of code,...",
     image: "/images/review/retailmatch.jpeg",
     imageAlt: "Jane Doe",
-    ratingImage: "/images/review/5-stars.png",
+    ratingImage: "/images/review/5-stars-green.png",
   },
   {
     reviewerName: "Richard Kaskel",
@@ -21,7 +21,7 @@ const reviews = [
     image: "/images/review/live-recruit.jpeg",
     imageAlt: "5 starts review",
     link: "https://www.linkedin.com/in/richardkaskel/",
-    ratingImage: "/images/review/5-stars.png",
+    ratingImage: "/images/review/5-stars-green.png",
   },
 
   {
@@ -34,7 +34,7 @@ const reviews = [
       "computer science concepts. Will work with again!",
     image: "/images/preview/businesswoman_Preview.jpeg",
     imageAlt: "John Doe",
-    ratingImage: "/images/review/5-stars.png",
+    ratingImage: "/images/review/5-stars-green.png",
   },
 ];
 

@@ -50,7 +50,7 @@ const PublicLayout: FC<IProps> = ({ children }) => {
       </DynamicModal>
       <DynOffCanvas
         show={appContext?.showOffCanvas}
-        closeHandler={appContext?.toggleOffcanvas}
+        closeHandler={appContext?.toggleOffCanvas}
         setShowBackdrop={appContext?.setShowBackdrop}
       >
         {<MenuRoutes routes={menuRoutes} />}

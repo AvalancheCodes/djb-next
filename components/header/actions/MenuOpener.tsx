@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 
 interface NavbarOpenerProps {
-  clickHandler: () => void;
+  clickHandler: any;
 }
 
 const MenuOpener: FC<NavbarOpenerProps> = ({ clickHandler }): ReactElement => {

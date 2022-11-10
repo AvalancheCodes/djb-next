@@ -1,4 +1,7 @@
 import React, { ReactElement, FC, useEffect } from "react";
+// import fas, { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Rating from "@/components/rating/rating";
 
 export interface IReviewItemProps {
   reviewerName: string;
@@ -58,7 +61,7 @@ const ReviewItem: FC<IReviewItemProps> = (
       <div className="container h-100 px-4 ">
         <div className="row d-flex h-100">
           <div className="col-md-8 justify-content-center align-self-center align-items-start">
-            <div className="slider-content text-start pt-5 ps-3">
+            <div className="slider-content text-start pt-4">
               {/* */}
               <h2
                 className="
@@ -100,7 +103,14 @@ const ReviewItem: FC<IReviewItemProps> = (
                     animate__delay-4s
                     "
               >
-                <img src={props.ratingImage} alt="rating" className="w-40" />
+                <Rating
+                  baseCount={5}
+                  rating={5}
+                  classNames="fs-3 text-secondary"
+                />
+                {/*<span className="fa fa-star checked fs-3"></span>*/}
+                {/*<FontAwesomeIcon icon={["fas", "star"]} className="fs-3" />*/}
+                {/*<img src={props.ratingImage} alt="rating" className="w-40" />*/}
               </div>
               {/*animate__animated */}
               <div
