@@ -117,12 +117,18 @@ const ReviewItem: FC<IReviewItemProps> = (
                 className="reviewer mt-4
                       animate__animated
                       animate__fadeInUp animate__delay-5s
-
+g
               "
               >
-                <a href="#" className="btn btn-line text-white">
-                  {reviewerName + " " + title}
-                </a>
+                <div></div>
+                <div className="btn btn-line text-white mb-0">
+                  {reviewerName}
+                </div>
+                <div className="text-white">
+                  {" "}
+                  <span className="fw-bold">{title.split(",")[0]}</span>,
+                  {title.split(",")[1]}
+                </div>
               </div>
             </div>
           </div>
