@@ -16,7 +16,6 @@ const ReviewHero = (): ReactElement => {
   const [tnsIndex, setTnsIndex] = React.useState(0);
 
   const onIndexChanged = (info: any): void => {
-    debugger;
     setTnsIndex(info.index);
     console.log("Index:", info.displayIndex);
   };

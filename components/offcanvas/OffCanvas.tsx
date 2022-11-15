@@ -6,7 +6,6 @@ export interface IPropsOffcanvas {
   show: boolean | undefined;
   children: ReactNode;
   closeHandler: any;
-  setShowBackdrop: any;
 }
 
 const options = {

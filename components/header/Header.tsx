@@ -1,20 +1,20 @@
 import { FC } from "react";
-import { offcanvasRoutes } from "../../public/config/routes";
-
-import MenuRoute from "../../model/Navigation/MenuRoute";
-import TransparentTopNav from "@/components/header/top-nav/TransparentTopNav";
-
-const menuRoutes = offcanvasRoutes.map(
-  (route) =>
-    new MenuRoute(route.name, route.friendlyName, route.title, route.path)
-);
+import { useRouter } from "next/router";
+import TopNav from "@/components/header/top-nav/TopNav";
 
 const Header: FC = () => {
+  const router = useRouter();
+  console.log(router.route);
+
   return (
     <>
-      <header className="navbar-dark navbar-transparent navbar-sticky">
+      <header
+        className={`${
+          router.route === "/" ? "navbar-dark navbar-transparent" : ""
+        } navbar-sticky`}
+      >
         {/*<TopNav />*/}
-        <TransparentTopNav />
+        <TopNav />
         <div className="divider-light opacity-1"></div>
       </header>
     </>

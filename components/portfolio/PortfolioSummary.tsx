@@ -64,7 +64,11 @@ const PortfolioSummary = (): JSX.Element => {
       </div>
       <div className="row">
         <div className="col-lg-12">
-          <TinySliderComponent options={options} classNames="dots-bordered">
+          <TinySliderComponent
+            options={options}
+            classNames="dots-bordered"
+            innerClassNames={"h-400"}
+          >
             {imageHoverItems}
           </TinySliderComponent>
         </div>

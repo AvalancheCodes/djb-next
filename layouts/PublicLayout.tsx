@@ -51,7 +51,6 @@ const PublicLayout: FC<IProps> = ({ children }) => {
       <DynOffCanvas
         show={appContext?.showOffCanvas}
         closeHandler={appContext?.toggleOffCanvas}
-        setShowBackdrop={appContext?.setShowBackdrop}
       >
         {<MenuRoutes routes={menuRoutes} />}
       </DynOffCanvas>

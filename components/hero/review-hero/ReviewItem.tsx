@@ -1,6 +1,4 @@
 import React, { ReactElement, FC, useEffect } from "react";
-// import fas, { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Rating from "@/components/rating/rating";
 
 export interface IReviewItemProps {
@@ -33,12 +31,6 @@ const ReviewItem: FC<IReviewItemProps> = (
 
   useEffect(() => {
     if (itemRef.current) {
-      // console.log(
-      //   "index changed inside ReviewItem",
-      //   sliderIndex,
-      //   itemRef.current
-      // );
-      // animated elements
       const h2 = itemRef.current.querySelector("h2");
       const h5 = itemRef.current.querySelector("h5");
       const review = itemRef.current.querySelector("p");
@@ -106,28 +98,23 @@ const ReviewItem: FC<IReviewItemProps> = (
                 <Rating
                   baseCount={5}
                   rating={5}
-                  classNames="fs-3 text-secondary"
+                  classNames="fs-3 text-success"
                 />
-                {/*<span className="fa fa-star checked fs-3"></span>*/}
-                {/*<FontAwesomeIcon icon={["fas", "star"]} className="fs-3" />*/}
-                {/*<img src={props.ratingImage} alt="rating" className="w-40" />*/}
               </div>
               {/*animate__animated */}
               <div
                 className="reviewer mt-4
+                d-flex justify-content-between
                       animate__animated
-                      animate__fadeInUp animate__delay-5s
-g
-              "
+                      animate__fadeInUp animate__delay-5sg"
               >
-                <div></div>
                 <div className="btn btn-line text-white mb-0">
                   {reviewerName}
                 </div>
-                <div className="text-white">
+                <div className="text-white ">
                   {" "}
-                  <span className="fw-bold">{title.split(",")[0]}</span>,
-                  {title.split(",")[1]}
+                  <span className="fw-bold">{title.split(",")[0]}, </span>
+                  <span> {title.split(",")[1]}</span>
                 </div>
               </div>
             </div>

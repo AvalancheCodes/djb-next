@@ -57,11 +57,15 @@ const Testimonials: FC = () => {
   return (
     <div className="container">
       <div className="row position-relative">
-        <div className="col-sm-8 mb-3 mx-auto text-center pt-7">
+        <div className="col-sm-8 mb-3 mx-auto text-center">
           <h2 className="display-5 mb-5 text-dark-stroke">Testimonials</h2>
         </div>
         <div className="col-md-10 mx-auto text-center pb-7">
-          <TinySliderComponent options={options} classNames={""}>
+          <TinySliderComponent
+            options={options}
+            classNames={""}
+            innerClassNames={"h-200"}
+          >
             {items}
           </TinySliderComponent>
         </div>
